@@ -1,5 +1,7 @@
 *{
     font-family:'Roboto Mono', monospace;
+    color: white;
+    font-size: 0.95rem;
     margin: 0;
     padding: 0;
 }
@@ -13,6 +15,9 @@ body{
     font-family:'Roboto Mono', monospace;
 }
 
+.inst-list {
+    border-color: #222222;
+} 
 
 
 
