@@ -1,8 +1,7 @@
-*{
-    font-family:'Roboto Mono', monospace;
+* {
+    font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     color: rgb(244, 244, 244);
-    font-size: 0.95rem;
     margin: 0;
     padding: 0;
 }
@@ -13,10 +12,19 @@
     --color-yellow: #DCDCAA;
     --color-yellow-2: #f3de54;
     --color-comment: #6A9955;
+    --color-seleccion: #264F78;
+    --color-blue: #55b8fa;
+    --color-string: #CE9178;
+    --color-keywords: #ff8af5;
+    --color-sea: #4EC9B0;
 }
 
-body{
+body {
     background-color: #141414;
+    font-size: 0.95rem;
+}
+
+.mm-display {
     height: 100vh;
 }
 
@@ -29,18 +37,23 @@ body{
 }
 
 .mm-button {
-    font-family:'Roboto Mono', monospace;
-    border-color: var(--color-third);
+    font-family: 'Roboto Mono', monospace;
+    border-color: var(--color-second);
+}
+
+.mm-button:hover {
+    background-color: var(--color-second);
+    border: none;
 }
 
 .supertitle {
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 
 .inst-list {
     color: var(--color-second);
-} 
+}
 
 /* clases para los colores de la tipo */
 .yellow {
@@ -53,4 +66,20 @@ body{
 
 .comment {
     color: var(--color-comment);
+}
+
+.keywords {
+    color: var(--color-keywords);
+}
+
+.blue {
+    color: var(--color-blue);
+}
+
+.string {
+    color: var(--color-string);
+}
+
+.sea {
+    color: var(--color-sea)
 }
