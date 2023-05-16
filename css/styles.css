@@ -13,7 +13,7 @@
     --color-yellow-2: #f3de54;
     --color-comment: #6A9955;
     --color-seleccion: #264F78;
-    --color-blue: #55b8fa;
+    --color-blue: #7ccbff;
     --color-string: #CE9178;
     --color-keywords: #ff8af5;
     --color-sea: #4EC9B0;
@@ -38,12 +38,17 @@ body {
 
 .mm-button {
     font-family: 'Roboto Mono', monospace;
-    border-color: var(--color-second);
+    border-color: var(--color-third);
 }
 
 .mm-button:hover {
     background-color: var(--color-second);
     border: none;
+}
+
+.mm-instructions {
+    border: solid var(--color-third) 0.05rem;
+    border-radius: 0.5rem;
 }
 
 .supertitle {
@@ -53,6 +58,7 @@ body {
 
 .inst-list {
     color: var(--color-second);
+    
 }
 
 /* clases para los colores de la tipo */
