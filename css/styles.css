@@ -1,5 +1,6 @@
 *{
     font-family:'Roboto Mono', monospace;
+    font-weight: 400;
     color: rgb(244, 244, 244);
     font-size: 0.95rem;
     margin: 0;
@@ -8,8 +9,10 @@
 
 :root {
     --color-second: #222222;
+    --color-third: #3f3f3f;
     --color-yellow: #DCDCAA;
-    --color-yellow-2: #FFFF00;
+    --color-yellow-2: #f3de54;
+    --color-comment: #6A9955;
 }
 
 body{
@@ -27,13 +30,17 @@ body{
 
 .mm-button {
     font-family:'Roboto Mono', monospace;
+    border-color: var(--color-third);
 }
+
+.supertitle {
+    font-size: 3rem;
+}
+
 
 .inst-list {
     color: var(--color-second);
 } 
-
-
 
 /* clases para los colores de la tipo */
 .yellow {
@@ -42,4 +49,8 @@ body{
 
 .yellowtext {
     color: var(--color-yellow);
+}
+
+.comment {
+    color: var(--color-comment);
 }
