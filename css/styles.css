@@ -1,9 +1,15 @@
 *{
     font-family:'Roboto Mono', monospace;
-    color: white;
+    color: rgb(244, 244, 244);
     font-size: 0.95rem;
     margin: 0;
     padding: 0;
+}
+
+:root {
+    --color-second: #222222;
+    --color-yellow: #DCDCAA;
+    --color-yellow-2: #FFFF00;
 }
 
 body{
@@ -11,21 +17,29 @@ body{
     height: 100vh;
 }
 
+.mm-nav {
+    background-color: var(--color-second);
+}
+
+.mm-nav-text {
+    font-size: 0.95rem;
+}
+
 .mm-button {
     font-family:'Roboto Mono', monospace;
 }
 
 .inst-list {
-    border-color: #222222;
+    color: var(--color-second);
 } 
 
 
 
 /* clases para los colores de la tipo */
 .yellow {
-    color: rgb(255, 242, 0);
+    color: var(--color-yellow-2);
 }
 
 .yellowtext {
-    color: #DCDCAA;
+    color: var(--color-yellow);
 }
