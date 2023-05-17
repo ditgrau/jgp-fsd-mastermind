@@ -27,11 +27,13 @@
             </a>
         </div>
     </nav>
+    
     <div class="row container-fluid p-0 m-0 pt-4 mt-5">
         <p class="text-center h5 m-0"><span class="blue">~master</span><span class="keywords">(</span><span
                 class="string">"mind"</span><span class="keywords">)</span>;
         </p>
     </div>
+
     <div class="container-fluid m-0 p-0 mm-display-second d-flex align-items-center">
 
         <!-- user name -->
@@ -46,34 +48,35 @@
                     <input name="user" type="text" maxlength="15" class="form-control"
                         id="userName" placeholder="Introduce tu nombre">
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-primary my-2" onclick="changeToLevel()">Aceptar</button>
+                        <button type="button" class="btn btn-primary my-2 bton-alert" onclick="changeToLevel()">Aceptar</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- choose levels -->
-        <div class="container  mm-hidden" id="mm-levels">
-            <div class="row m-0 p-0">
+        <div class="container mm-hidden" id="mm-levels">
+            <div class="row m-0 p-0 pb-5">
                 <p class="h1 text-center">Niveles</p>
             </div>
-            <div class="row row-cols-1 row-cols-sm-3 m-0 p-0 mt-3 mb-5">
-                <div class="col d-flex justify-content-center p-0 justify-content-sm-end">
-                    <a class="btn btn-outline-light mm-button p-2 px-5" href="./pages/levels.html" role="button">
-                        <span class="yellowtext">level</span>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <a class="col-7 col-sm-4 col-md-3 col-md-2 col-lg-2 col-xl-2 p-0 btn btn-outline-light mm-button my-1 mx-5 mx-md-1 py-2"
+                        href="./choose-color.html" role="button">
+                        <span class="sea">level</span>
                     </a>
-                </div>
-                <div class="col d-flex justify-content-center p-0 justify-content-sm-center">
-                    <a class="btn btn-outline-light mm-button p-2 px-5" href="./pages/levels.html" role="button">
-                        <span class="yellowtext">level++</span>
+                    <a class="col-7 col-sm-4 col-md-3 col-md-2 col-lg-2 col-xl-2 p-0 btn btn-outline-light mm-button my-1 mx-5 mx-md-1 py-2"
+                        href="./choose-color.html" role="button">
+                        <span class="sea">level</span><span class="almostWhite">++</span>
                     </a>
-                </div>
-                <div class="col d-flex justify-content-center p-0 justify-content-sm-start">
-                    <a class="btn btn-outline-light mm-button p-2 px-5" href="./pages/about.html" role="button">
-                        <span class="yellowtext">level+=2</span>
+                    <a class="col-7 col-sm-4 col-md-3 col-md-2 col-lg-2 col-xl-2 p-0 btn btn-outline-light mm-button my-1 mx-5 mx-md-1 py-2"
+                        href="./choose-color.html" role="button">
+                        <span class="sea">level</span><span class="almostWhite">+=2</span>
                     </a>
                 </div>
             </div>
+            
+            
         </div>
     </div>
 
