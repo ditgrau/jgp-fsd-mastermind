@@ -9,3 +9,15 @@ const changeToLevel = ()=> {
 };
 // TODO  revisar esto en el codigo de Felipe
 
+
+// let user = document.getElementById("userName").value;
+//   console.log("Nombre del jugador: " + user);
+
+for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    {
+        i++
+        
+    }
+    
+}

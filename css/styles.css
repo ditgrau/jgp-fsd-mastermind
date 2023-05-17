@@ -16,7 +16,8 @@
     --color-blue: #7ccbff;
     --color-string: #CE9178;
     --color-keywords: #ff8af5;
-    --color-sea: #4EC9B0;
+    --color-sea: #67cccc;
+    --color-almostwhite: #e1e9e8;
 }
 
 body {
@@ -89,6 +90,11 @@ body {
     font-size: 1.3rem;
 }
 
+.bton-alert {
+    font-size: 0.8rem;
+    letter-spacing: 0;
+}
+
 .inst-list {
     border-color: var(--color-third);
 
@@ -120,18 +126,9 @@ body {
 }
 
 .sea {
-    color: var(--color-sea)
+    color: var(--color-sea);
 }
 
-
-
-
-
-
-.own-container {
-    height: 5rem;
-    width: 5rem;
-}
-.escondido {
-    display: none;
+.almostWhite {
+    color: var(--color-almostwhite);
 }
