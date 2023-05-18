@@ -1,32 +1,55 @@
 /* esta funcion almacena el dato del nombre 
 y cambia la pantalla por la de seleccionar nivel */
 
-const changeToLevel = () => {
-    let user = document.getElementById("userName").value;
-    sessionStorage.setItem('user', user);
+// const changeToLevel = () => {
+//     let user = document.getElementById("userName").value;
+//     sessionStorage.setItem('user', user);
 
-    // cambiar a la pagina nivel
-    document.getElementById("mm-character").style.display = "none";
-    document.getElementById("mm-levels").style.display = "block";
-};
+//     // cambiar a la pagina nivel
+//     document.getElementById("mm-character").style.display = "none";
+//     document.getElementById("mm-levels").style.display = "block";
+// };
+
+/* Funciones para la seleccion de colores segun nivel */
+const bubbles4 = () => {
+    document.getElementById("mm-levels").style.display = "none";
+    document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
+}
+
+const bubbles5 = () => {
+    document.getElementById("mm-levels").style.display = "none";
+    document.getElementById("mm-levelTwoBubbles").classList.remove("mm-hidden");
+}
+
+const bubbles6 = () => {
+    document.getElementById("mm-levels").style.display = "none";
+    document.getElementById("mm-levelThreeBubbles").classList.remove("mm-hidden");
+}
 
 
+
+// const modePVP = () => {
+//     document.getElementById("electionMode-p").classList.add("hidden");
+//     document.getElementById("electionMode-cpu").classList.add("hidden");
+//     document.getElementById("nombres-home-vampires").classList.remove("hidden");
+//     document.getElementById("nombres-home-werewolves").classList.remove("hidden");
+//     document.getElementById("botonPlayers").classList.remove("hidden")
 // TODO  revisar esto en el codigo de Felipe
 
 /* estas constantes identifican los botones de nivel*/
 
-let level1 = document.getElementById('levelOne');
-let level2 = document.getElementById('levelTwo');
-let level3 = document.getElementById('levelThree');
+// let level1 = document.getElementById('levelOne');
+// let level2 = document.getElementById('levelTwo');
+// let level3 = document.getElementById('levelThree');
 
 
-const bubblesLevel = () => {
-    let level = document.getElementById("userName").value;
-    sessionStorage.setItem('level', level);
+// const bubblesLevel = () => {
+//     let level = document.getElementById("userName").value;
+//     sessionStorage.setItem('level', level);
 
-    document.getElementById("mm-levelOneBubbles").style.display = "none";
-    document.getElementById("mm-levelTwoBubbles").style.display = "block";
-}
+//     document.getElementById("mm-levelOneBubbles").style.display = "none";
+//     document.getElementById("mm-levelTwoBubbles").style.display = "block";
+// }
 
 // mm-levelBubbles
 // mm-levelTwoBubbles
@@ -34,18 +57,17 @@ const bubblesLevel = () => {
 // estan todas hidden 
 
 // Agrega un controlador de eventos a cada botón
-boton1.addEventListener('click', handleClick);
-boton2.addEventListener('click', handleClick);
-boton3.addEventListener('click', handleClick);
+// boton1.addEventListener('click', handleClick);
+// boton2.addEventListener('click', handleClick);
+// boton3.addEventListener('click', handleClick);
 
 // Función manejadora del evento de clic
-function handleClick(event) {
+// function handleClick(event) {
   // Obtén el id del botón en el que se hizo clic
-  const botonId = event.target.id;
+//   const botonId = event.target.id;
   
   // Imprime el id del botón en la consola
-  console.log('Se hizo clic en el botón con id:', botonId);
-}
+//   console.log('Se hizo clic en el botón con id:', botonId);
 
 
 
