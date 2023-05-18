@@ -26,6 +26,20 @@ const changeNavbarLevel = () => {
     document.getElementById("nb-level").style.display = "block";
 };
 
+//Función seleccion de color 
+
+// esta es la funcion basica que me pinta el background
+/* const input = document.getElementById("picker01");
+    input.oninput = () => {
+    document.body.style.backgroundColor = input.value;
+    };
+*/
+// esta ya me pinta el div circleColor
+const input = document.getElementById("picker01");
+    input.oninput = () => {
+    document.getElementById("bub-picker01").style.backgroundColor = input.value;
+    };
+
 
 // esta funcion almacena el dato del nombre //
 
