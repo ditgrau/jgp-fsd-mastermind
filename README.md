@@ -9,7 +9,7 @@ __<p align="center">Proyecto 3 - Mastermind - Semana 4</p>__
 
 <table align="center">
 <tr>
-<td><b>🚧 Work in progress🚧</b>
+<h3 align="center">🚧 Work in progress🚧</h3>
 </td>
 </tr>
 </table> 
@@ -23,7 +23,7 @@ En la vista de inicio, encontramos dos botones que nos dirigen: el primero hacia
 
 ### Flujo del juego
 
-En primer lugar, nos encontramos con un pequeño formulario donde podemos introducir el nombre de usuario. Una vez ingresado este dato, en el mismo documento HTML tendremos la opción de seleccionar el nivel. El siguiente paso será personalizar los colores con los que deseamos jugar, y finalmente llegaremos al tablero de juego.
+En primer lugar, encontramos un pequeño formulario donde introducir el nombre de usuario. Una vez ingresado encontramos 3 botones para elegir el nivel de juego y, posterioremente, se nos pedirá personalizar los colores con los que deseamos jugar. Finalmente, llegaremos al tablero de juego.
 
 #### Tablero de juego
 
