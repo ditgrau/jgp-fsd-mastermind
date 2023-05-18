@@ -9,13 +9,13 @@
 :root {
     --color-second: #222222;
     --color-third: #3f3f3f;
-    --color-yellow: #DCDCAA;
+    --color-yellow: #f6f6bc;
     --color-yellow-2: #f3de54;
     --color-comment: #6A9955;
-    --color-seleccion: #264F78;
-    --color-blue: #7ccbff;
-    --color-string: #CE9178;
-    --color-keywords: #ff8af5;
+    --color-selection: #3578bb;
+    --color-blue: #7cc1ef;
+    --color-string: #e69f83;
+    --color-keywords: #ff98e5;
     --color-sea: #67cccc;
     --color-almostwhite: #e1e9e8;
 }
@@ -59,17 +59,6 @@ body {
 .mm-myPic {
     height: 15rem;
     width: 15rem;
-    border-radius: 50%;
-    background-image: url(../img/myPic.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-.mm-myPicBorder {
-    height: 16rem;
-    width: 16rem;
-    border-radius: 50%;
-    border: solid var(--color-third) 0.05rem;
 }
 
 .supertitle {
@@ -112,22 +101,15 @@ input[type="color"] {
     border: solid var(--color-third) 0.05rem; 
 }
 
+.numberVsc {
+    color:#6c6c6c;
 
-/* appearance: auto;
-    width: 50px;
-    height: 27px;
-    cursor: default;
-    box-sizing: border-box;
-    background-color: buttonface;
-    color: buttontext;
-    border-width: 1px;
-    border-style: solid;
-    border-color: buttonborder;
-    border-image: initial;
-    padding: 1px 2px;
-} */
+}
+
+
 
 /* clases para los colores de la tipo */
+
 .yellow {
     color: var(--color-yellow-2);
 }
@@ -158,4 +140,8 @@ input[type="color"] {
 
 .almostWhite {
     color: var(--color-almostwhite);
+}
+
+.blueSelection {
+    color: var(--color-selection);
 }
