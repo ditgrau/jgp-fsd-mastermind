@@ -11,6 +11,8 @@ for (let i = 0; i < numerodefilas; i++) {
     padresito.appendChild(elementoClonado);
 }
 
+// esta con bucle aleatorio, tengo que hacer un if para cada nivel
+
 // codigo ejercicio de clase
 // let numeroParrafos = Math.floor(Math.random() * 11);
 
