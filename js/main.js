@@ -29,22 +29,29 @@ const changeNavbarLevel = () => {
 //Función seleccion de color 
 
 // esta es la funcion basica que me pinta el background
-/* const input = document.getElementById("picker01");
+/* let input = document.getElementById("picker01");
     input.oninput = () => {
     document.body.style.backgroundColor = input.value;
     };
 */
 // esta ya me pinta el div circleColor
-const input = document.getElementById("picker01");
+// let input = document.getElementById("picker01");
+//     input.oninput = () => {
+//     document.getElementById("bub-picker01").style.backgroundColor = input.value;
+//     };
+
+// necesito guardar ese color nuevo para mas tarde meterlo en el array, o lo puedo meter en la misma funcion
+// esta funcion almacena el dato del nombre //
+let input = document.getElementById("picker01");
+let arrayColors = [];  
+
     input.oninput = () => {
     document.getElementById("bub-picker01").style.backgroundColor = input.value;
+    arrayColors.push(input.value);
+    console.log(arrayColors);
     };
-
-
-// esta funcion almacena el dato del nombre //
-
-
-// const changeToLevel = () => {
+console.log (arrayColors);
+// let changeToLevel = () => {
 //     let user = document.getElementById("userName").value;
 //     sessionStorage.setItem('user', user);
 
