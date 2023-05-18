@@ -1,31 +1,49 @@
-/* esta funcion almacena el dato del nombre 
-y cambia la pantalla por la de seleccionar nivel */
+// esta funcion almacena el dato del nombre //
+
 
 // const changeToLevel = () => {
 //     let user = document.getElementById("userName").value;
 //     sessionStorage.setItem('user', user);
 
-//     // cambiar a la pagina nivel
-//     document.getElementById("mm-character").style.display = "none";
-//     document.getElementById("mm-levels").style.display = "block";
-// };
+// 
 
-/* Funciones para la seleccion de colores segun nivel */
+// Funciones para la seleccion de colores segun nivel //
 const bubbles4 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
+    changeNavbarLevel();
 }
 
 const bubbles5 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelTwoBubbles").classList.remove("mm-hidden");
+    changeNavbarLevel();
 }
 
 const bubbles6 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelThreeBubbles").classList.remove("mm-hidden");
+    changeNavbarLevel();
 }
 
+//Función para cambiar la Navbar de la pagina de nivel"
+
+const changeNavbarLevel = () => {
+    document.getElementById("nb-player").style.display = "none";
+    document.getElementById("nb-level").style.display = "block";
+};
+
+// Obtiene el elemento HTML al que se desea agregar el event listener
+
+const boton = document.getElementsByClassName("idboton");
+console.log (boton);
+// Define la función que se ejecutará cuando ocurra el evento
+// function miFuncion() {
+  // Código a ejecutar cuando se haga clic en el elemento
+//   console.log("Se hizo clic en el elemento");
+// }
+// Agrega el event listener al elemento
+// boton.addEventListener("click");
 
 
 // const modePVP = () => {
