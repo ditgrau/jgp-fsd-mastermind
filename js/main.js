@@ -26,11 +26,104 @@ const changeNavbarLevel = () => {
     document.getElementById("nb-level").style.display = "block";
 };
 
+///////////////////////^^^^^^^^^^^ LIMPIO
+
+
+//Función seleccion de color 
+
+    // esta es la funcion basica que me pinta el background
+
+// let input = document.getElementById("picker01");
+
+//     input.oninput = () => {
+//     document.body.style.backgroundColor = input.value;
+//     };
+
+    // esta ya me pinta el div circleColor
+
+// let input = document.getElementById("picker01");
+
+//     input.oninput = () => {
+//     document.getElementById("bub-picker01").style.backgroundColor = input.value;
+//     };
+
+    // almaceno el dato en un array
+
+// let colorSelected = document.getElementById("picker01");
+// let arrayColors = [];  
+
+//     colorSelected.oninput = () => {
+//     document.getElementById("bub-picker01").style.backgroundColor = input.value;
+//     arrayColors.push(colorSelected.value);
+//     console.log(arrayColors);
+//     };
+
+// console.log (arrayColors);
+
+
+// if (arrayColors.lenght===4) {
+    // que aparezca el boton de seguir
+
+// en este array quiero guardar los colores nuevos
+let arrayNewColors = [];
+// esto es HTML collection, en consola pone Node 
+let colorsInput = document.getElementsByName("pickerEasy");
+// lo convierto en array
+let arrayDefaultColors = Array.from(colorsInput);
+// convierto en array las empty bubbles, juntando los dos pasos anteriores
+let emptyBubbles = Array.from( document.getElementsByClassName("circleColor1"));
+
+// bucle for que recorre el array
+for (let i = 0; i < arrayDefaultColors.length; i++) {
+    // cada vez que un elemento del array tenga un cambio .oninput :
+    arrayDefaultColors [i].oninput = () => {
+    emptyBubbles[i].style.backgroundColor = arrayDefaultColors[i].value;
+    arrayNewColors.push(arrayDefaultColors[i].value);
+    console.log(arrayNewColors);
+    };
+} 
+
+// let colorsInput = document.getElementsByName("pickerMedium");
+// let colorsInput = document.getElementsByName("pickerDif");
+
+
+
+
+// el array con los colores de partida
+// let colorsito = document.getElementsByName("head");
+// let arrayColorsito = Array.from(colorsito);
+// arrayColorsito.map (head =>{
+//     console.log (head.value);
+
+// })
+
+
+// console.log (arrayColorsito);
+// console.log (colorsito);
+// let contenedores = document.getElementsByClassName('container');
+// console.log(contenedores);
+
+// let arrayContenedores = Array.from(contenedores);
+// console.log(arrayContenedores);
+
+// codigo de clase de David
+// arrayContenedores.map(
+//     elementoArray => {
+        // el parentesis azul son las variables de la funcion .addEventListener (que hago?, cuando lo hago?) POR ESO LA COMA!
+        // elementoArray.addEventListener('mouseover', ()=> {elementoArray.classList.add('cercle');})
+//         elementoArray.addEventListener('mouseover', () => {
+//             elementoArray.classList.add('cercle');
+//         })
+
+//         elementoArray.addEventListener ('mouseout', () => {
+//             elementoArray.classList.remove('cercle');
+//         })
+
+//     }
+// )
 
 // esta funcion almacena el dato del nombre //
-
-
-// const changeToLevel = () => {
+// let changeToLevel = () => {
 //     let user = document.getElementById("userName").value;
 //     sessionStorage.setItem('user', user);
 

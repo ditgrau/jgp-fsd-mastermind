@@ -94,7 +94,7 @@ input[type="color"] {
     width: 2rem;
 }
 
-.circleColor {
+.circleColor, .circleColor1 {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
