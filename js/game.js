@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 // let elementoExistente = document.getElementById('FilaTablero');
 // console.log (elementoExistente);
@@ -37,3 +38,8 @@ for (let i = 0; i < numberRows; i++) {
 // }
 
 
+=======
+// aqui la logica del juego
+
+// 
+>>>>>>> Stashed changes
