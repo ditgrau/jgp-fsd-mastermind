@@ -106,7 +106,9 @@ input[type="color"] {
 
 }
 
-
+.mastermindHead{
+    cursor: pointer;
+}
 
 /* clases para los colores de la tipo */
 

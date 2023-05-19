@@ -1,9 +1,6 @@
-<<<<<<< Updated upstream
-// RETO 1 - PAGINA COLORES 
-=======
+
 // RETO 1 - PAGINA COLORES ///////////////////////nivel facil HECHO!
 
->>>>>>> Stashed changes
 /* Pintar las bubbles de los colores que se eligen en el color picker */
 
 

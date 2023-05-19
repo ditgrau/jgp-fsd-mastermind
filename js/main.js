@@ -21,51 +21,42 @@ const bubbles6 = () => {
     saveLevel("mm-levelDif");
 }
 
-        //Función para cambiar la Navbar de la pagina de nivel"
+    //Función para cambiar la Navbar de la pagina de nivel" ------ hay que darle vueltesita, no funciona bien
 
 // const changeNavbarLevel = () => {
 //     document.getElementById("nb-player").style.display = "none";
 //     document.getElementById("nb-level").style.display = "block";
 // };
 
+// Funcion para el logo, no queria meterlo en el html por que no se me moviese el diseño
 const comeBackHome = () => {
     window.location.href = "../index.html";
 }
 
 // session storage
 
-        // recoger el nombre
-const saveName =() => {        
-let userPlayer = document.getElementById("userName").value;
+        // recoger el nombre usuario
 
+const saveName =() => {   
+
+let userPlayer = document.getElementById("userName").value;
 if (userPlayer.length!==0){
 sessionStorage.setItem('user', userPlayer);
 console.log("Nombre del jugador: " + userPlayer);
 window.location.href = "settings.html";
 }else {
+    // aqui tendre que meter un mensaje
 }
 }
 
         // recoger el nivel
-        const saveLevel =(textFromId) => {        
-            let userLevelText = document.getElementById(textFromId).textContent;
-            sessionStorage.setItem('text',userLevelText);
-            console.log (userLevelText);
-        }
-            
-            // if (userPlayer.length!==0){
-            // sessionStorage.setItem('user', userPlayer);
-            // console.log("Nombre del jugador: " + userPlayer);
-            // window.location.href = "settings.html";
-            // }else {
-            // }let arrayUserLevel = Array.from(userLevel);
-            // let cleanUserLevel = arrayUserLevel.map (letter => letter.trim());
-            
 
+const saveLevel =(textFromId) => {        
 
-// {/* <input type="submit"></input> */} metinedo el submit en el form?
-
-
+let userLevelText = document.getElementById(textFromId).textContent;
+sessionStorage.setItem('text',userLevelText);
+console.log (userLevelText);
+}
 
 
 // Color-picker y arrays
