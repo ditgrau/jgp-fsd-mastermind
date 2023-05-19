@@ -3,27 +3,30 @@
 const bubbles4 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
-    changeNavbarLevel();
+    // changeNavbarLevel();
+    saveLevel("mm-levelOneBubbles");
 }
 
 const bubbles5 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelTwoBubbles").classList.remove("mm-hidden");
-    changeNavbarLevel();
+    // changeNavbarLevel();
+    saveLevel("mm-levelTwoBubbles");
 }
 
 const bubbles6 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelThreeBubbles").classList.remove("mm-hidden");
-    changeNavbarLevel();
+    // changeNavbarLevel();
+    saveLevel("mm-levelThreeBubbles");
 }
 
         //Función para cambiar la Navbar de la pagina de nivel"
 
-const changeNavbarLevel = () => {
-    document.getElementById("nb-player").style.display = "none";
-    document.getElementById("nb-level").style.display = "block";
-};
+// const changeNavbarLevel = () => {
+//     document.getElementById("nb-player").style.display = "none";
+//     document.getElementById("nb-level").style.display = "block";
+// };
 
 const comeBackHome = () => {
     window.location.href = "../index.html";
@@ -40,9 +43,25 @@ sessionStorage.setItem('user', userPlayer);
 console.log("Nombre del jugador: " + userPlayer);
 window.location.href = "settings.html";
 }else {
+}
+}
 
-}
-}
+        // recoger el nivel
+        const saveLevel =(textFromId) => {        
+            let userLevel = document.getElementById(textFromId).textContent;
+            sessionStorage.setItem('text',userLevel);
+            let arrayUserLevel = Array.from(userLevel);
+            console.log (arrayUserLevel);
+        }
+            
+            // if (userPlayer.length!==0){
+            // sessionStorage.setItem('user', userPlayer);
+            // console.log("Nombre del jugador: " + userPlayer);
+            // window.location.href = "settings.html";
+            // }else {
+            // }
+            
+
 
 // {/* <input type="submit"></input> */} metinedo el submit en el form?
 
