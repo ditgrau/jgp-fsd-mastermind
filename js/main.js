@@ -68,21 +68,25 @@ console.log (colorBoardDif);
 //     
 // });
 // funciona con el primer clic, necesito con el segundo
-let numerodeclicks = 0;
+// let numerodeclicks = 0;
 let colorPicker = document.getElementById('picker00');
-colorPicker.addEventListener('click', ()=>{
-    if (numerodeclicks === 1){
-        colorPicker.disabled = true;
-    }else {
-        numerodeclicks++
-    }
-    
+colorPicker.addEventListener('input', ()=>{
+    colorPicker.disabled = true;
 });
+
+
+
+// if (numerodeclicks === 1){
+//     colorPicker.disabled = true;
+// }else {
+//     numerodeclicks++
+// }
+
 
     
 //     if (contador === 2) {
 
-//         colorPicker.disabled = true;
+//         
         
 //     }
 //  })
