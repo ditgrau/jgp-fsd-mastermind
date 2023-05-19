@@ -28,30 +28,72 @@ const changeNavbarLevel = () => {
 
 
 // en este array quiero guardar los colores nuevos
-let arrayNewColors = [];
-// esto es HTML collection, en consola pone Node 
-let colorsInput = document.getElementsByName("pickerEasy");
-// lo convierto en array
-let arrayDefaultColors = Array.from(colorsInput);
+
+
+
+
+let arrayColorsEasy = Array.from(document.getElementsByName("pickerEasy"));
+let arrayColorsMedium = Array.from(document.getElementsByName("pickerMedium"));
+let arrayColorsDif = Array.from(document.getElementsByName("pickerDif"));
+                // esto es HTML collection, en consola pone Node 
+                // let colorsInputEasy = document.getElementsByName("pickerEasy");
+                // let colorsInputMedium = document.getElementsByName("pickerMedium");
+                // let colorsInputDif = document.getElementsByName("pickerDif");
+
+                // lo convierto en array
+                // let arrayColorsEasy = Array.from(colorsInputEasy);
+                // let arrayColorsMedium = Array.from(colorsInputMedium);
+                // let arrayColorsDif = Array.from(colorsInputDif);
+
 // convierto en array las empty bubbles, juntando los dos pasos anteriores
-let emptyBubbles = Array.from( document.getElementsByClassName("circleColor1"));
+let emptyBubblesEasy = Array.from( document.getElementsByClassName("circleColorEasy"));
+let emptyBubblesMedium = Array.from( document.getElementsByClassName("circleColorMedium"));
+let emptyBubblesDif = Array.from( document.getElementsByClassName("circleColorDif"));
 
 // bucle for que recorre el array
-for (let i = 0; i < arrayDefaultColors.length; i++) {
-    // cada vez que un elemento del array tenga un cambio .oninput :
-    arrayDefaultColors [i].oninput = () => {
-    emptyBubbles[i].style.backgroundColor = arrayDefaultColors[i].value;
-    arrayNewColors.push(arrayDefaultColors[i].value);
-    console.log(arrayNewColors);
-    };
-} 
+// for (let i = 0; i < arrayDefaultColors.length; i++) {
+//     arrayDefaultColors [i].oninput = () => { // cada vez que un elemento del array tenga un cambio .oninput :
+//     emptyBubbles[i].style.backgroundColor = arrayDefaultColors[i].value;
+//     arrayNewColors.push(arrayDefaultColors[i].value);
+//     console.log(arrayNewColors);
+//     };
+// } 
 
 
 
-const arraycolorPicker = document.getElementById('colorPicker');
-colorPicker.addEventListener('change', function() {
-    colorPicker.disabled = true;
-});
+//  esta es la funcion para el bucle que almacena los colores en un array, AQUI LA HE DEFINIDO, AHORA LA TENGO QUE INVOCAR CON ARRAYS
+const loopGetColors = (arrayLevel, emptyBubblesLevel)=>{
+    let arrayNewColors = [];
+    for (let i = 0; i < arrayLevel.length; i++) {
+        arrayLevel[i].oninput = () => { 
+            // cada vez que un elemento del array tenga un cambio .oninput :
+        emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
+        arrayNewColors.push(arrayLevel[i].value);
+        } 
+    }
+    return arrayNewColors;
+}
+
+let colorBoardArray = loopGetColors (arrayColorsEasy, emptyBubblesEasy);
+
+//////////////////////////////
+
+
+  // Utiliza el array resultadofinal en otra función o donde lo necesites
+
+
+
+
+// let result = loopGetColors(arrayColorsEasy, emptyBubblesEasy);
+// loopGetColors (arrayColorsEasy, emptyBubblesEasy);
+
+// console.log (result);
+
+
+// const arraycolorPicker = document.getElementById('colorPicker');
+// colorPicker.addEventListener('change', function() {
+//     colorPicker.disabled = true;
+// });
 
 
 
