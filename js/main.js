@@ -75,6 +75,13 @@ const loopGetColors = (arrayLevel, emptyBubblesLevel)=>{
 }
 
 let colorBoardArray = loopGetColors (arrayColorsEasy, emptyBubblesEasy);
+let colorBoardMedium = loopGetColors (arrayColorsMedium, emptyBubblesMedium);
+let colorBoardDif = loopGetColors (arrayColorsDif, emptyBubblesDif);
+
+console.log (colorBoardArray);
+console.log (colorBoardMedium);
+console.log (colorBoardDif);
+
 
 //////////////////////////////
 
