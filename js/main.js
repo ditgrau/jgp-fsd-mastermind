@@ -58,29 +58,110 @@ console.log (colorBoardDif);
 
 
 
+
 ///////////////////////^^^^^^^^^^^ LIMPIO
 
 // ahora quiero que se desactive el colorpicker una vez haya cambiado de estado, para que no me entren ams datos en el array
 
-// no se que he hecho aqui, me he empezado a liar...
-const disabledColorPicker = (arrayLevel) =>{
-    for (let i = 0; i < arrayLevel.length; i++) {
-        arrayLevel[i].oninput = () => { 
-            // cada vez que un elemento del array tenga un cambio .oninput :
-        emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
-        arrayNewColors.push(arrayLevel[i].value);
+// const colorPicker = document.getElementById('picker00');
+// colorPicker.addEventListener('mouseup', function() {
+//     
+// });
+// funciona con el primer clic, necesito con el segundo
+let numerodeclicks = 0;
+let colorPicker = document.getElementById('picker00');
+colorPicker.addEventListener('click', ()=>{
+    if (numerodeclicks === 1){
+        colorPicker.disabled = true;
+    }else {
+        numerodeclicks++
     }
+    
+});
 
-}
+    
+//     if (contador === 2) {
+
+//         colorPicker.disabled = true;
+        
+//     }
+//  })
+
+
+
+
+
+
+
+// no se que he hecho aqui, me he empezado a liar...
+// const disabledColorPicker = (arrayLevel) =>{
+//     for (let i = 0; i < arrayLevel.length; i++) {
+//         arrayLevel[i].oninput = () => { 
+//             // cada vez que un elemento del array tenga un cambio .oninput :
+//         emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
+//         arrayNewColors.push(arrayLevel[i].value);
+//     }
+
+// }
+// }
 
 
 // esto deberia hacerlo por cada elemento del array:
 
-Elementodelarray.addEventListener('change', function() {
-colorPicker.disabled = true;
+// Elementodelarray.addEventListener('change', function() {
+// colorPicker.disabled = true;
 
 // entonces el array seria 
-arrayLevel (elemento, i)
+// arrayLevel = (Elementodelarray, i)=>{
+
+//     for (let index = 0; index < array.length; index++) {
+//         const element = array[index];
+        
+//     }
+ 
+
+// })
+// }
+
+// const loopGetColors = (arrayLevel, emptyBubblesLevel)=>{
+//     let arrayNewColors = [];
+//     for (let i = 0; i < arrayLevel.length; i++) {
+//         arrayLevel[i].oninput = () => { 
+//             // cada vez que un elemento del array tenga un cambio .oninput :
+//         emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
+//         arrayNewColors.push(arrayLevel[i].value);
+//         arrayLevel[i].addEventListener('change', function() {
+//             arrayLevel[i].disabled = true;
+//         })
+//         }
+//     return arrayNewColors;
+//     }
+// }
+
+// const array = [null, null, null]; // Array inicialmente vacío
+
+// function desactivarElemento(valor, indice) {
+  // Desactivar el elemento que proporciona el valor
+//   array[indice] = null;
+// }
+
+// Asignar valores y desactivar elementos utilizando map
+// array.map((valor, indice) => {
+//   if (valor === null) {
+//     // Asignar el valor deseado
+//     array[indice] = "Valor asignado";
+//     desactivarElemento("Valor asignado", indice);
+//   }
+// });
+
+// console.log(array); // Resultado: ["Valor asignado", null, null]
+
+
+
+
+/////////////////////hasta aqui
+
+// y por cada elemento del array seria con una iteracion, que podria ir dentro del bucle anterior
 
 
 
