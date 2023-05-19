@@ -1,5 +1,4 @@
 // RETO 1 - PAGINA COLORES 
-
 /* Pintar las bubbles de los colores que se eligen en el color picker */
 
 

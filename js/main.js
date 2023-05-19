@@ -25,6 +25,29 @@ const changeNavbarLevel = () => {
     document.getElementById("nb-level").style.display = "block";
 };
 
+const comeBackHome = () => {
+    window.location.href = "../index.html";
+}
+
+// session storage
+
+        // recoger el nombre
+const saveName =() => {        
+let userPlayer = document.getElementById("userName").value;
+
+if (userPlayer.length!==0){
+sessionStorage.setItem('user', userPlayer);
+console.log("Nombre del jugador: " + userPlayer);
+window.location.href = "settings.html";
+}else {
+
+}
+}
+
+// {/* <input type="submit"></input> */} metinedo el submit en el form?
+
+
+
 
 // Color-picker y arrays
 
@@ -61,6 +84,15 @@ console.log (colorBoardDif);
 
 ///////////////////////^^^^^^^^^^^ LIMPIO
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// let colorPicker = document.getElementById('picker00');
+// colorPicker.addEventListener('input', ()=>{
+//     colorPicker.disabled = true;
+// });
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 // ahora quiero que se desactive el colorpicker una vez haya cambiado de estado, para que no me entren ams datos en el array
 
 // const colorPicker = document.getElementById('picker00');
@@ -69,10 +101,9 @@ console.log (colorBoardDif);
 // });
 // funciona con el primer clic, necesito con el segundo
 // let numerodeclicks = 0;
-let colorPicker = document.getElementById('picker00');
-colorPicker.addEventListener('input', ()=>{
-    colorPicker.disabled = true;
-});
+
+
+
 
 
 
@@ -256,8 +287,7 @@ colorPicker.addEventListener('input', ()=>{
 
 // esta funcion almacena el dato del nombre //
 // let changeToLevel = () => {
-//     let user = document.getElementById("userName").value;
-//     sessionStorage.setItem('user', user);
+//     
 
 // 
 
@@ -270,8 +300,10 @@ colorPicker.addEventListener('input', ()=>{
 
 // const changeToLevel = (id1, id2) => {
     // con event lostener
-//     let user = document.getElementById("userName").value;
-//     sessionStorage.setItem('user', user);
+
+
+    
+//     
 
     // cambiar a la pagina nivel
 //     document.getElementById(id1).style.display = "none";
@@ -283,10 +315,4 @@ colorPicker.addEventListener('input', ()=>{
 // recoger el dato del user
     
 
-    
-// let user = document.getElementById("userName").value;
-//   console.log("Nombre del jugador: " + user);
-// {/* <input type="submit"></input> */} metinedo el submit en el form?
-
-
-
+  
