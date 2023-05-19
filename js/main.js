@@ -1,5 +1,3 @@
-
-
 // Funciones para la seleccion de colores segun nivel //
 const bubbles4 = () => {
     document.getElementById("mm-levels").style.display = "none";
@@ -29,41 +27,6 @@ const changeNavbarLevel = () => {
 ///////////////////////^^^^^^^^^^^ LIMPIO
 
 
-//Función seleccion de color 
-
-    // esta es la funcion basica que me pinta el background
-
-// let input = document.getElementById("picker01");
-
-//     input.oninput = () => {
-//     document.body.style.backgroundColor = input.value;
-//     };
-
-    // esta ya me pinta el div circleColor
-
-// let input = document.getElementById("picker01");
-
-//     input.oninput = () => {
-//     document.getElementById("bub-picker01").style.backgroundColor = input.value;
-//     };
-
-    // almaceno el dato en un array
-
-// let colorSelected = document.getElementById("picker01");
-// let arrayColors = [];  
-
-//     colorSelected.oninput = () => {
-//     document.getElementById("bub-picker01").style.backgroundColor = input.value;
-//     arrayColors.push(colorSelected.value);
-//     console.log(arrayColors);
-//     };
-
-// console.log (arrayColors);
-
-
-// if (arrayColors.lenght===4) {
-    // que aparezca el boton de seguir
-
 // en este array quiero guardar los colores nuevos
 let arrayNewColors = [];
 // esto es HTML collection, en consola pone Node 
@@ -82,6 +45,21 @@ for (let i = 0; i < arrayDefaultColors.length; i++) {
     console.log(arrayNewColors);
     };
 } 
+
+
+
+const arraycolorPicker = document.getElementById('colorPicker');
+colorPicker.addEventListener('change', function() {
+    colorPicker.disabled = true;
+});
+
+
+
+
+
+
+
+
 
 // let colorsInput = document.getElementsByName("pickerMedium");
 // let colorsInput = document.getElementsByName("pickerDif");
@@ -155,3 +133,6 @@ for (let i = 0; i < arrayDefaultColors.length; i++) {
 // let user = document.getElementById("userName").value;
 //   console.log("Nombre del jugador: " + user);
 // {/* <input type="submit"></input> */} metinedo el submit en el form?
+
+
+
