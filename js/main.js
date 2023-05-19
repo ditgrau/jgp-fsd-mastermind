@@ -81,7 +81,7 @@ for (let i = 0; i < arrayDefaultColors.length; i++) {
     arrayNewColors.push(arrayDefaultColors[i].value);
     console.log(arrayNewColors);
     };
-}
+} 
 
 // let colorsInput = document.getElementsByName("pickerMedium");
 // let colorsInput = document.getElementsByName("pickerDif");
