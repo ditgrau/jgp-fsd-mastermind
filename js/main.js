@@ -4,21 +4,21 @@ const bubbles4 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
     // changeNavbarLevel();
-    saveLevel("mm-levelOneBubbles");
+    saveLevel("mm-levelEasy");
 }
 
 const bubbles5 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelTwoBubbles").classList.remove("mm-hidden");
     // changeNavbarLevel();
-    saveLevel("mm-levelTwoBubbles");
+    saveLevel("mm-levelMed");
 }
 
 const bubbles6 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelThreeBubbles").classList.remove("mm-hidden");
     // changeNavbarLevel();
-    saveLevel("mm-levelThreeBubbles");
+    saveLevel("mm-levelDif");
 }
 
         //Función para cambiar la Navbar de la pagina de nivel"
@@ -48,10 +48,9 @@ window.location.href = "settings.html";
 
         // recoger el nivel
         const saveLevel =(textFromId) => {        
-            let userLevel = document.getElementById(textFromId).textContent;
-            sessionStorage.setItem('text',userLevel);
-            let arrayUserLevel = Array.from(userLevel);
-            console.log (arrayUserLevel);
+            let userLevelText = document.getElementById(textFromId).textContent;
+            sessionStorage.setItem('text',userLevelText);
+            console.log (userLevelText);
         }
             
             // if (userPlayer.length!==0){
@@ -59,7 +58,8 @@ window.location.href = "settings.html";
             // console.log("Nombre del jugador: " + userPlayer);
             // window.location.href = "settings.html";
             // }else {
-            // }
+            // }let arrayUserLevel = Array.from(userLevel);
+            // let cleanUserLevel = arrayUserLevel.map (letter => letter.trim());
             
 
 
