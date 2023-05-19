@@ -142,6 +142,22 @@ input[type="color"] {
     color: var(--color-almostwhite);
 }
 
+
+
+/* gameboard */
+
+.circleGrid {
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    border: solid var(--color-third) 0.05rem; 
+}
+
+.grid-circles {
+    height: 4rem;
+    width: 4rem;
+}
+
 .blueSelection {
     color: var(--color-selection);
 }
