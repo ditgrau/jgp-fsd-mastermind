@@ -94,11 +94,17 @@ input[type="color"] {
     width: 2rem;
 }
 
-.circleColor, .circleColorEasy, .circleColorMedium, .circleColorDif {
+.circleColorEasy, .circleColorMedium, .circleColorDif {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
     border: solid var(--color-third) 0.05rem; 
+}
+
+.circleColor {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
 }
 
 .numberVsc {
