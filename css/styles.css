@@ -48,7 +48,7 @@ body {
 
 .mm-button:hover {
     background-color: var(--color-second);
-    border: none;
+    border: 1px solid transparent;
 }
 
 .mm-instructions{

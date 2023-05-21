@@ -1,28 +1,28 @@
 
 
-// let elementoExistente = document.getElementById('FilaTablero');
-// console.log (elementoExistente);
+                    // let elementoExistente = document.getElementById('FilaTablero');
+                    // console.log (elementoExistente);
+                    
+                    // let padresito = document.getElementById('contenedor');
+                    // console.log (padresito);
+                    
+                    // let numerodefilas = Math.floor(Math.random() * 11);
+                    // for (let i = 0; i < numerodefilas; i++) {
+                    //     let elementoClonado = elementoExistente.cloneNode(true);
+                    //     padresito.appendChild(elementoClonado);
+                    // }
 
-// let padresito = document.getElementById('contenedor');
-// console.log (padresito);
+// let rowGameboard = document.getElementById('rowGameboard');
+// console.log (rowGameboard);
 
-// let numerodefilas = Math.floor(Math.random() * 11);
-// for (let i = 0; i < numerodefilas; i++) {
-//     let elementoClonado = elementoExistente.cloneNode(true);
-//     padresito.appendChild(elementoClonado);
+// let gameBoard = document.getElementById('gameBoard');
+// console.log (gameBoard);
+
+// let numberRows = Math.floor(Math.random() * 11);
+// for (let i = 0; i < numberRows; i++) {
+//     let clonedRow = rowGameboard.cloneNode(true);
+//     gameBoard.appendChild(clonedRow);
 // }
-
-let rowGameboard = document.getElementById('rowGameboard');
-console.log (rowGameboard);
-
-let gameBoard = document.getElementById('gameBoard');
-console.log (gameBoard);
-
-let numberRows = Math.floor(Math.random() * 11);
-for (let i = 0; i < numberRows; i++) {
-    let clonedRow = rowGameboard.cloneNode(true);
-    gameBoard.appendChild(clonedRow);
-}
 
 // esta con bucle aleatorio, tengo que hacer un if para cada nivel
 
