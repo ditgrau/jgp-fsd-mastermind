@@ -58,7 +58,7 @@ const bubbles6 = () => {
     saveLevel("mm-levelDif");
 }
 
-// Color-picker y arrays
+// Color-picker y arrays // deberia haber hecho un mapeo (?) mirarlo...
 
 let arrayColorsEasy = Array.from(document.getElementsByName("pickerEasy"));
 let arrayColorsMedium = Array.from(document.getElementsByName("pickerMedium"));
