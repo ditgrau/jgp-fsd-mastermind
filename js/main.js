@@ -1,9 +1,47 @@
+// Funcion para el logo, no queria meterlo en el html por que no se me moviese el diseño
+
+const comeBackHome = () => {
+    window.location.href = "../index.html";
+}
+
+
+// session storage // recoger el nombre usuario
+
+const saveName =() => {   
+    let userPlayer = document.getElementById("userName").value;
+    if (userPlayer.length!==0){
+    sessionStorage.setItem('user', userPlayer);
+    console.log("Nombre del jugador: " + userPlayer);
+    window.location.href = "settings.html";
+    }else {
+        // aqui tendre que meter un mensaje
+    }
+    }
+
+
+// session storage // recoger el nivel
+
+const saveLevel =(textFromId) => {        
+    let userLevelText = document.getElementById(textFromId).textContent;
+    sessionStorage.setItem('text',userLevelText);
+    console.log (userLevelText);
+    }
+    
+
+//Función para cambiar la Navbar de la pagina de nivel"
+
+const changeNavbarLevel = () => {
+    document.getElementById("nb-player").style.display = "none";
+    document.getElementById("nb-level").style.display = "block";
+};
+
+
 // Funciones onclick para cambiar a la pantalla de elegir colores segun nivel //
 
 const bubbles4 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
-    // changeNavbarLevel();
+    changeNavbarLevel();
     saveLevel("mm-levelEasy");
 }
 
@@ -21,42 +59,10 @@ const bubbles6 = () => {
     saveLevel("mm-levelDif");
 }
 
-    //Función para cambiar la Navbar de la pagina de nivel" ------ hay que darle vueltesita, no funciona bien
 
-// const changeNavbarLevel = () => {
-//     document.getElementById("nb-player").style.display = "none";
-//     document.getElementById("nb-level").style.display = "block";
-// };
 
-// Funcion para el logo, no queria meterlo en el html por que no se me moviese el diseño
-const comeBackHome = () => {
-    window.location.href = "../index.html";
-}
 
-// session storage
 
-        // recoger el nombre usuario
-
-const saveName =() => {   
-
-let userPlayer = document.getElementById("userName").value;
-if (userPlayer.length!==0){
-sessionStorage.setItem('user', userPlayer);
-console.log("Nombre del jugador: " + userPlayer);
-window.location.href = "settings.html";
-}else {
-    // aqui tendre que meter un mensaje
-}
-}
-
-        // recoger el nivel
-
-const saveLevel =(textFromId) => {        
-
-let userLevelText = document.getElementById(textFromId).textContent;
-sessionStorage.setItem('text',userLevelText);
-console.log (userLevelText);
-}
 
 
 // Color-picker y arrays

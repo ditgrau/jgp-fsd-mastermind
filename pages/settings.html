@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top bg-body-tertiary m-0 p-0">
+    <nav class="navbar fixed-top bg-body-tertiary m-0 p-0" id="nb-player">
         <div class="container-fluid mm-nav pb-1 pt-2">
-            <a class="row navbar-brand mm-nav-text" href="./user-name.html" id="nb-player">
+            <a class="row navbar-brand mm-nav-text" href="./user-name.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"
                     class="col m-0 p-0 bi bi-arrow-bar-left px-2" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -25,7 +25,11 @@
                 </svg>
                 <p class="col m-0 p-0">"../jugador"</p>
             </a>
-            <a class="row row-cols-2 navbar-brand mm-nav-text" href="./settings.html" id="nb-level">
+        </div>
+    </nav>
+    <nav class="navbar fixed-top bg-body-tertiary m-0 p-0 mm-hidden" id="nb-level">
+        <div class="container-fluid mm-nav pb-1 pt-2">
+            <a class="row navbar-brand mm-nav-text" href="./settings.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"
                     class="col m-0 p-0 bi bi-arrow-bar-left px-2" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -36,8 +40,8 @@
         </div>
     </nav>
     <div class="row container-fluid p-0 m-0 pt-4 mt-5">
-        <p class="text-center mastermindHead h5 m-0" onclick="comeBackHome()"><span class="blue">~master</span><span class="keywords">(</span><span
-                class="string">"mind"</span><span class="keywords">)</span>;
+        <p class="text-center mastermindHead h5 m-0" onclick="comeBackHome()"><span class="blue">~master</span><span
+                class="keywords">(</span><span class="string">"mind"</span><span class="keywords">)</span>;
         </p>
     </div>
     <div class="container-fluid m-0 p-0 mm-display-second d-flex align-items-center">
