@@ -79,20 +79,17 @@ const loopGetColors = (arrayLevel, emptyBubblesLevel) => {
     return arrayNewColors;
 }
 
-let colorBoardEasy = loopGetColors (arrayColorsEasy, emptyBubblesEasy);
-let colorBoardMedium = loopGetColors (arrayColorsMedium, emptyBubblesMedium);
-let colorBoardDif = loopGetColors (arrayColorsDif, emptyBubblesDif);
+loopGetColors(arrayColorsEasy, emptyBubblesEasy);
+loopGetColors(arrayColorsMedium, emptyBubblesMedium);
+loopGetColors(arrayColorsDif, emptyBubblesDif);
 
-console.log(colorBoardEasy);
-console.log (colorBoardMedium);
-console.log (colorBoardDif);
+// session storage del array de colores
 
-// sessionstoragedel array de los colores
-const userColors =(colorBoardEasy) => {        
-    sessionStorage.setItem('userColors',colorBoardEasy);
-    console.log (colorBoardEasy);
-    }
-    
+let newColors = JSON.stringify(arrayNewColors);
+sessionStorage.setItem('newColors', newColors);
+
+
+
 
 
 ///////////////////////^^^^^^^^^^^ LIMPIO
