@@ -7,23 +7,22 @@ const comeBackHome = () => {
 
 // session storage // recoger el nombre usuario
 
-const saveName =() => {   
-    let userPlayer = document.getElementById("userName").value;
+const saveName =() => {  
+    let userPlayer = document.getElementById("userName").value; 
     if (userPlayer.length!==0){
     sessionStorage.setItem('user', userPlayer);
-    console.log("Nombre del jugador: " + userPlayer);
     window.location.href = "settings.html";
     }else {
         // aqui tendre que meter un mensaje
     }
-    }
+}
 
 
 // session storage // recoger el nivel
 
 const saveLevel =(textFromId) => {        
     let userLevelText = document.getElementById(textFromId).textContent;
-    sessionStorage.setItem('text',userLevelText);
+    sessionStorage.setItem('userLevel',userLevelText);
     console.log (userLevelText);
     }
     
@@ -59,12 +58,6 @@ const bubbles6 = () => {
     saveLevel("mm-levelDif");
 }
 
-
-
-
-
-
-
 // Color-picker y arrays
 
 let arrayColorsEasy = Array.from(document.getElementsByName("pickerEasy"));
@@ -75,32 +68,37 @@ let emptyBubblesEasy = Array.from( document.getElementsByClassName("circleColorE
 let emptyBubblesMedium = Array.from( document.getElementsByClassName("circleColorMedium"));
 let emptyBubblesDif = Array.from( document.getElementsByClassName("circleColorDif"));
 
-const loopGetColors = (arrayLevel, emptyBubblesLevel)=>{
-    let arrayNewColors = [];
+let arrayNewColors = [];
+const loopGetColors = (arrayLevel, emptyBubblesLevel) => { 
     for (let i = 0; i < arrayLevel.length; i++) {
-        arrayLevel[i].oninput = () => { 
-            // cada vez que un elemento del array tenga un cambio .oninput :
+    arrayLevel[i].oninput = () => { 
         emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
-        arrayNewColors.push(arrayLevel[i].value);
-        } 
+        arrayNewColors[i] = arrayLevel[i].value;
+    }
     }
     return arrayNewColors;
 }
 
-let colorBoardArray = loopGetColors (arrayColorsEasy, emptyBubblesEasy);
+let colorBoardEasy = loopGetColors (arrayColorsEasy, emptyBubblesEasy);
 let colorBoardMedium = loopGetColors (arrayColorsMedium, emptyBubblesMedium);
 let colorBoardDif = loopGetColors (arrayColorsDif, emptyBubblesDif);
 
-console.log (colorBoardArray);
+console.log(colorBoardEasy);
 console.log (colorBoardMedium);
 console.log (colorBoardDif);
 
-
+// sessionstoragedel array de los colores
+const userColors =(colorBoardEasy) => {        
+    sessionStorage.setItem('userColors',colorBoardEasy);
+    console.log (colorBoardEasy);
+    }
+    
 
 
 ///////////////////////^^^^^^^^^^^ LIMPIO
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
+// tendria que mapear el array del color picker y que haga esta funcion, pero deberia estar implicita en la funcion del loop (?)
 // let colorPicker = document.getElementById('picker00');
 // colorPicker.addEventListener('input', ()=>{
 //     colorPicker.disabled = true;
@@ -118,31 +116,12 @@ console.log (colorBoardDif);
 // funciona con el primer clic, necesito con el segundo
 // let numerodeclicks = 0;
 
-
-
-
-
-
 // if (numerodeclicks === 1){
 //     colorPicker.disabled = true;
 // }else {
 //     numerodeclicks++
-// }
-
-
-    
+// }    
 //     if (contador === 2) {
-
-//         
-        
-//     }
-//  })
-
-
-
-
-
-
 
 // no se que he hecho aqui, me he empezado a liar...
 // const disabledColorPicker = (arrayLevel) =>{
@@ -152,10 +131,6 @@ console.log (colorBoardDif);
 //         emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
 //         arrayNewColors.push(arrayLevel[i].value);
 //     }
-
-// }
-// }
-
 
 // esto deberia hacerlo por cada elemento del array:
 
@@ -210,16 +185,6 @@ console.log (colorBoardDif);
 
 
 
-/////////////////////hasta aqui
-
-// y por cada elemento del array seria con una iteracion, que podria ir dentro del bucle anterior
-
-
-
-// en este array quiero guardar los colores nuevos
-
-
-
 
 
                 // esto es HTML collection, en consola pone Node 
@@ -254,20 +219,6 @@ console.log (colorBoardDif);
 
 
 
-
-
-
-
-
-
-
-
-// let colorsInput = document.getElementsByName("pickerMedium");
-// let colorsInput = document.getElementsByName("pickerDif");
-
-
-
-
 // el array con los colores de partida
 // let colorsito = document.getElementsByName("head");
 // let arrayColorsito = Array.from(colorsito);
@@ -298,37 +249,8 @@ console.log (colorBoardDif);
 //             elementoArray.classList.remove('cercle');
 //         })
 
-//     }
-// )
-
-// esta funcion almacena el dato del nombre //
-// let changeToLevel = () => {
-//     
-
-// 
 
 
 
 
 
-// revisar esto que he hecho con mara
-
-
-// const changeToLevel = (id1, id2) => {
-    // con event lostener
-
-
-    
-//     
-
-    // cambiar a la pagina nivel
-//     document.getElementById(id1).style.display = "none";
-//     document.getElementById(id2).style.display = "block";
-// };
-
-
-
-// recoger el dato del user
-    
-
-  
