@@ -15,6 +15,8 @@
 </head>
 
 <body>
+
+    <!-- navbar player -->
     <nav class="navbar fixed-top bg-body-tertiary m-0 p-0" id="nb-player">
         <div class="container-fluid mm-nav pb-1 pt-2">
             <a class="row navbar-brand mm-nav-text" href="./user-name.html">
@@ -27,6 +29,8 @@
             </a>
         </div>
     </nav>
+
+    <!-- navbar level -->
     <nav class="navbar fixed-top bg-body-tertiary m-0 p-0 mm-hidden" id="nb-level">
         <div class="container-fluid mm-nav pb-1 pt-2">
             <a class="row navbar-brand mm-nav-text" href="./settings.html">
@@ -39,13 +43,16 @@
             </a>
         </div>
     </nav>
+
+    <!-- logo mastermind / home -->
     <div class="row container-fluid p-0 m-0 pt-4 mt-5">
         <p class="text-center mastermindHead h5 m-0" onclick="comeBackHome()"><span class="blue">~master</span><span
                 class="keywords">(</span><span class="string">"mind"</span><span class="keywords">)</span>;
         </p>
     </div>
-    <div class="container-fluid m-0 p-0 mm-display-second d-flex align-items-center">
 
+    <!-- main container -->
+    <div class="container-fluid m-0 p-0 mm-display-second d-flex align-items-center">
 
         <!-- choose levels -->
         <div class="container" id="mm-levels">
@@ -69,6 +76,7 @@
                 </div>
             </div>
         </div>
+
         <!-- level - bubbles -->
         <div class="container mm-hidden" id="mm-levelOneBubbles">
             <!-- title -->
@@ -152,6 +160,17 @@
                 <input type="color" id="picker14" name="pickerDif" value="#67cccc" class="mx-3 my-2 p-0">
             </div>
         </div>
+    </div>
+
+     <!-- footer play -->
+     <div class="row container-fluid p-0">
+        <div class="row m-0 p-0 justify-content-center comment">&lt!-- Compilando --&gt</div>
+    </div>
+    <div class="row container-fluid p-0 m-0 pb-4 mb-2">
+        <a class="idboton mmLevelButton col-7 col-sm-4 col-md-3 col-md-2 col-lg-2 col-xl-2 p-0 btn btn-outline-light mm-button py-2"
+                        role="button" id="levelOne" onclick=bubbles4()>
+                        <span class="sea">level</span>
+                    </a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
