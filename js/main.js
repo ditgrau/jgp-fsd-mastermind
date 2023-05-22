@@ -20,11 +20,11 @@ const saveName =() => {
 
 // session storage // recoger el nivel
 
-const saveLevel =(textFromId) => {        
-    let userLevelText = document.getElementById(textFromId).textContent;
-    sessionStorage.setItem('userLevel',userLevelText);
-    console.log (userLevelText);
-    }
+// const saveLevel =(textFromId) => {        
+//     let userLevelText = document.getElementById(textFromId).textContent;
+//     sessionStorage.setItem('userLevel',userLevelText);
+//     console.log (userLevelText);
+//     }
     
 
 //Función para cambiar la Navbar de la pagina de nivel"
@@ -34,29 +34,34 @@ const changeNavbarLevel = () => {
     document.getElementById("nb-level").style.display = "block";
 };
 
-
 // Funciones onclick para cambiar a la pantalla de elegir colores segun nivel //
 
 const bubbles4 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
     changeNavbarLevel();
-    saveLevel("mm-levelEasy");
+    // saveLevel("mm-levelEasy");
+    sessionStorage.setItem('level', 'level1');
 }
 
 const bubbles5 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelTwoBubbles").classList.remove("mm-hidden");
-    // changeNavbarLevel();
-    saveLevel("mm-levelMed");
+    changeNavbarLevel();
+    // saveLevel("mm-levelMed");
+    sessionStorage.setItem('level', 'level2');
 }
 
 const bubbles6 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelThreeBubbles").classList.remove("mm-hidden");
-    // changeNavbarLevel();
-    saveLevel("mm-levelDif");
+    changeNavbarLevel();
+    // saveLevel("mm-levelDif");
+    sessionStorage.setItem('level', 'level3');
 }
+
+
+
 
 // Color-picker y arrays // deberia haber hecho un mapeo (?) mirarlo...
 

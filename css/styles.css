@@ -155,8 +155,8 @@ input[type="color"] {
 /* gameboard */
 
 .circleGrid {
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
     border: solid var(--color-third) 0.05rem; 
 }
@@ -168,4 +168,13 @@ input[type="color"] {
 
 .blueSelection {
     color: var(--color-selection);
+}
+
+.circleBoard, .circleBoardEmpty{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+.circleBoard {
+border: solid var(--color-third) 0.05rem; 
 }

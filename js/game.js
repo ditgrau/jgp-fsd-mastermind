@@ -33,3 +33,19 @@ if (userLevel === "level") {
 } else {
     cloneRows(6);
 }
+
+const saveLevel =(textFromId) => {        
+    let userLevelText = document.getElementById(textFromId).textContent;
+    sessionStorage.setItem('userLevel',userLevelText);
+    console.log (userLevelText);
+    }
+
+
+    
+
+    let selectedLevel = sessionStorage.getItem("level");
+let selected = document.getElementById(selectedLevel);
+
+window.onload = (event) => {
+    selected.style.display = "flex";
+};
