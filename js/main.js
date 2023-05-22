@@ -7,17 +7,25 @@ const comeBackHome = () => {
 
 // session storage // recoger el nombre usuario
 
+const alertName = ()=>{
+    document.getElementById("alertName").classList.add("mm-hidden");
+}
+
 const saveName =() => {  
     let userPlayer = document.getElementById("userName").value; 
     if (userPlayer.length!==0){
     sessionStorage.setItem('user', userPlayer);
     window.location.href = "settings.html";
     }else {
-        // aqui tendre que meter un mensaje
+        document.getElementById("alertName").classList.remove("mm-hidden");
+        setTimeout(alertName, 1500);
     }
 }
 
-// session storage // recoger el nivel
+
+
+
+{/* // session storage // recoger el nivel */}
 
 // const saveLevel =(textFromId) => {        
 //     let userLevelText = document.getElementById(textFromId).textContent;
