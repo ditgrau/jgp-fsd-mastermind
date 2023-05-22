@@ -43,18 +43,18 @@
 // ////////// para crear las bolitas elegidas  en el tablero
 
 
-const userLevel = sessionStorage.getItem('level');
+let userLevel = sessionStorage.getItem('level');
 let gameBoard = document.getElementById('gameBoard');
 
 const createRows = (userLevel) => {
 
     for (let i = 0; i < userLevel; i++) {
-        const rowsGameboard = document.createElement("div");
+        let rowsGameboard = document.createElement("div");
         rowsGameboard.classList.add("row");
         rowsGameboard.id = `rowGameboard-${i}`;
         gameBoard.appendChild(rowsGameboard);
         for (let j = 0; j < 5; j++) {
-            const cellsrow = document.createElement("div");
+            let cellsrow = document.createElement("div");
             cellsrow.classList.add("circleBoard")
             cellsrow.id = `circleBoard-${i}`  
             rowsGameboard.appendChild(cellsrow); 
