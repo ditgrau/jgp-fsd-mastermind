@@ -40,12 +40,3 @@ const saveLevel =(textFromId) => {
     console.log (userLevelText);
     }
 
-
-    
-
-    let selectedLevel = sessionStorage.getItem("level");
-let selected = document.getElementById(selectedLevel);
-
-window.onload = (event) => {
-    selected.style.display = "flex";
-};
