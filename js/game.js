@@ -6,11 +6,11 @@
 // let padresito = document.getElementById('contenedor');
 // console.log (padresito);
 
-let numerodefilas = Math.floor(Math.random() * 11);
-for (let i = 0; i < numerodefilas; i++) {
-    let elementoClonado = elementoExistente.cloneNode(true);
-    padresito.appendChild(elementoClonado);
-}
+// let numerodefilas = Math.floor(Math.random() * 11);
+// for (let i = 0; i < numerodefilas; i++) {
+//     let elementoClonado = elementoExistente.cloneNode(true);
+//     padresito.appendChild(elementoClonado);
+// }
 
 let rowGameboard = document.getElementById('rowGameboard');
 console.log(rowGameboard);
@@ -40,3 +40,5 @@ const saveLevel =(textFromId) => {
     console.log (userLevelText);
     }
 
+// ////////// para crear las bolitas elegidas  en el tablero
+console.log(sessionStorage.getItem('level'));

@@ -17,7 +17,6 @@ const saveName =() => {
     }
 }
 
-
 // session storage // recoger el nivel
 
 // const saveLevel =(textFromId) => {        

@@ -23,6 +23,7 @@
 body {
     background-color: #141414;
     font-size: 0.95rem;
+    user-select: none;  
 }
 
 .mm-display {
