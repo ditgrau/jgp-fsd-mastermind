@@ -33,3 +33,10 @@ if (userLevel === "level") {
 } else {
     cloneRows(6);
 }
+
+const saveLevel =(textFromId) => {        
+    let userLevelText = document.getElementById(textFromId).textContent;
+    sessionStorage.setItem('userLevel',userLevelText);
+    console.log (userLevelText);
+    }
+

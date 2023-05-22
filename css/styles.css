@@ -169,3 +169,12 @@ input[type="color"] {
 .blueSelection {
     color: var(--color-selection);
 }
+
+.circleBoard, .circleBoardEmpty{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+.circleBoard {
+border: solid var(--color-third) 0.05rem; 
+}
