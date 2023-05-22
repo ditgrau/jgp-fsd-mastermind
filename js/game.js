@@ -74,7 +74,7 @@ createRows(3);
 // }
 
 
-{/* <div class="row m-0 p-0 " id="rowGameboard">
+/* <div class="row m-0 p-0 " id="rowGameboard">
 <div class="col circleBoard m-1 p-0" id="cell1"></div>
 <div class="col circleBoard m-1 p-0" id="cell2"></div>
 <div class="col circleBoard m-1 p-0" id="cell3"></div>
@@ -89,4 +89,4 @@ createRows(3);
         <div class="circleGrid m-1 p-0" id="cell8"></div>
     </div>
 </div>
-</div> */}
+</div> */

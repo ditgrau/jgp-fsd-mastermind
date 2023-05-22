@@ -1,15 +1,10 @@
-// Funcion para el logo, no queria meterlo en el html por que no se me moviese el diseño
+// Funcion para el logo, no queria meterlo en el html para que no se me moviese el diseño
 
 const comeBackHome = () => {
     window.location.href = "../index.html";
 }
 
-
 // session storage // recoger el nombre usuario
-
-const alertName = ()=>{
-    document.getElementById("alertName").classList.add("mm-hidden");
-}
 
 const saveName =() => {  
     let userPlayer = document.getElementById("userName").value; 
@@ -17,15 +12,11 @@ const saveName =() => {
     sessionStorage.setItem('user', userPlayer);
     window.location.href = "settings.html";
     }else {
-        document.getElementById("alertName").classList.remove("mm-hidden");
-        setTimeout(alertName, 1500);
+        mmtypewriter("<-- Escribe tu nombre -->", 80, comment2)
     }
 }
 
-
-
-
-{/* // session storage // recoger el nivel */}
+/* // session storage // recoger el nivel */
 
 // const saveLevel =(textFromId) => {        
 //     let userLevelText = document.getElementById(textFromId).textContent;
@@ -67,6 +58,11 @@ const bubbles6 = () => {
     sessionStorage.setItem('level', 'level3');
 }
 
+// funcion consola Git
+
+const gitConsole = ()=> {
+    document.getElementById("gitText").classList.remove("mm-hidden");
+}
 
 // Color-picker y arrays // deberia haber hecho un mapeo (?) mirarlo...
 
@@ -79,16 +75,19 @@ let emptyBubblesMedium = Array.from( document.getElementsByClassName("circleColo
 let emptyBubblesDif = Array.from( document.getElementsByClassName("circleColorDif"));
 
 let arrayNewColors = [];
+
 const loopGetColors = (arrayLevel, emptyBubblesLevel) => { 
-    for (let i = 0; i < arrayLevel.length; i++) {
-    arrayLevel[i].oninput = () => { 
-        emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
-        arrayNewColors[i] = arrayLevel[i].value;
-    }
-    }
-    return arrayNewColors;
+for (let i = 0; i < arrayLevel.length; i++) {
+    arrayLevel[i].addEventListener('change', () => { 
+    emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
+    arrayNewColors[i] = arrayLevel[i].value;
+    arrayLevel[i].disabled = true;
+    });
 }
 
+return arrayNewColors;
+}
+    
 loopGetColors(arrayColorsEasy, emptyBubblesEasy);
 loopGetColors(arrayColorsMedium, emptyBubblesMedium);
 loopGetColors(arrayColorsDif, emptyBubblesDif);
@@ -100,14 +99,36 @@ console.log (arrayNewColors);
 let newColors = JSON.stringify(arrayNewColors);
 sessionStorage.setItem('newColors', newColors);
 
+// efecto maquina de escribir
 
-//////////////////////////prueba de disable
+const comment1 = document.getElementById("first-comment");
+const comment2 = document.getElementById("second-comment");
+const comment3 = document.getElementById("third-comment");
 
 
+const mmtypewriter = (comment, time = 200, div)=>{
+let arrayComent = comment.split("")
+    div.innerHTML = ""
+    let cont = 0
+    let writeComment = setInterval (()=>{
+        div.innerHTML += arrayComent[cont];
+        cont ++
+        if (cont === arrayComent.length) {
+            clearInterval(writeComment);
+        }
+    }, time)
+}
+
+mmtypewriter("<-- Juego creado por Judit Grau -->", 100, comment1)
 
 
-// 
 ///////////////////////^^^^^^^^^^^ LIMPIO
+
+
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // tendria que mapear el array del color picker y que haga esta funcion, pero deberia estar implicita en la funcion del loop (?)
@@ -137,8 +158,7 @@ sessionStorage.setItem('newColors', newColors);
 
 // esto deberia hacerlo por cada elemento del array:
 
-// Elementodelarray.addEventListener('change', function() {
-// colorPicker.disabled = true;
+
 
 // entonces el array seria 
 // arrayLevel = (Elementodelarray, i)=>{

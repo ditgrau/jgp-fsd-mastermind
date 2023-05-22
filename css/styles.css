@@ -18,6 +18,10 @@
     --color-keywords: #ff98e5;
     --color-sea: #67cccc;
     --color-almostwhite: #e1e9e8;
+    --color-pathGit: #eaff00;
+    --color-userGit: #11b97b;
+    --color-osGit: #ef73ff;
+    --color-branchGit: #00a4da;
 }
 
 body {
@@ -42,6 +46,14 @@ body {
     height: 45vh;
     display:flex;
     align-items:end;
+    margin: 0;
+    padding: 0;
+}
+
+.mm-thirdBody {
+    height: 35vh;
+    display:flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
@@ -83,10 +95,6 @@ body {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 300;
     letter-spacing: 0.05rem;
-}
-
-.mm-hidden {
-    display: none;
 }
 
 .title-alert {
@@ -134,36 +142,39 @@ input[type="color"] {
 .yellow {
     color: var(--color-yellow-2);
 }
-
 .yellowtext {
     color: var(--color-yellow);
 }
-
 .comment {
     color: var(--color-comment);
 }
-
 .keywords {
     color: var(--color-keywords);
 }
-
 .blue {
     color: var(--color-blue);
 }
-
 .string {
     color: var(--color-string);
 }
-
 .sea {
     color: var(--color-sea);
 }
-
 .almostWhite {
     color: var(--color-almostwhite);
 }
-
-
+.pathGit{
+    color: var(--color-pathGit);
+}
+.userGit {
+    color: var(--color-userGit)
+}
+.osGit {
+    color: var(--color-osGit);
+}
+.branchGit{
+    color: var(--color-branchGit);
+}
 
 /* gameboard */
 
@@ -192,26 +203,14 @@ input[type="color"] {
 border: solid var(--color-third) 0.05rem; 
 }
 
-/* animation
-.typing-class {
-    display:block;
-    border-right: 4px solid;
-    width: 0.2rem;
-
-    animation: typing 2s steps(18), blink .5s infinite step-end alternate;
-    overflow: hidden;
+.mm-hidden {
+    display: none;
 }
 
-@keyframes typing {
-    from { width: 0}
-}
-
-@keyframes blink {
-    50% {border-color: transparent}
-} */
-
+/* media */
 
 @media (max-width:1199px) {
+    
     .supertitle{
         font-size: 2em;
     }
