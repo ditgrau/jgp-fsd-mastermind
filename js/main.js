@@ -61,8 +61,6 @@ const bubbles6 = () => {
 }
 
 
-
-
 // Color-picker y arrays // deberia haber hecho un mapeo (?) mirarlo...
 
 let arrayColorsEasy = Array.from(document.getElementsByName("pickerEasy"));
@@ -88,22 +86,25 @@ loopGetColors(arrayColorsEasy, emptyBubblesEasy);
 loopGetColors(arrayColorsMedium, emptyBubblesMedium);
 loopGetColors(arrayColorsDif, emptyBubblesDif);
 
+console.log (arrayNewColors);
+
 // session storage del array de colores
 
 let newColors = JSON.stringify(arrayNewColors);
 sessionStorage.setItem('newColors', newColors);
 
 
+//////////////////////////prueba de disable
 
 
 
+
+// 
 ///////////////////////^^^^^^^^^^^ LIMPIO
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // tendria que mapear el array del color picker y que haga esta funcion, pero deberia estar implicita en la funcion del loop (?)
-// let colorPicker = document.getElementById('picker00');
-// colorPicker.addEventListener('input', ()=>{
-//     colorPicker.disabled = true;
+//
 // });
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -116,14 +117,7 @@ sessionStorage.setItem('newColors', newColors);
 //     
 // });
 // funciona con el primer clic, necesito con el segundo
-// let numerodeclicks = 0;
-
-// if (numerodeclicks === 1){
-//     colorPicker.disabled = true;
-// }else {
-//     numerodeclicks++
-// }    
-//     if (contador === 2) {
+//
 
 // no se que he hecho aqui, me he empezado a liar...
 // const disabledColorPicker = (arrayLevel) =>{
