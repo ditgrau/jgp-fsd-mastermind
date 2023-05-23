@@ -1,4 +1,35 @@
 
+let selectedColors = JSON.parse(sessionStorage.getItem('newColors'));
+let selectedLevel = sessionStorage.getItem('level');
+let divSelectedColors = document.getElementById('levelBoard');
+
+const createLevelBoard = (howMany) => {
+    for (let i = 0; i < howMany; i++) {
+        let clonedSelector = document.createElement("div");
+        clonedSelector.classList.add('circleBoard');
+        divSelectedColors.appendChild(clonedSelector);
+    }
+}
+
+if (selectedLevel === 'level1') {
+    createLevelBoard(4)
+} else if (selectedLevel === 'level2') {
+    createLevelBoard(5)
+} else
+    createLevelBoard(6)
+
+
+
+
+// const createSelectors = (selectedColors) => {
+//     for (let i = 0; i < selectedColors.length; i++) {
+//         let clonedSelector = document.createElement("div");
+//         clonedSelector.classList.add('circleBoard');
+//         divSelectedColors.appendChild(clonedSelector);
+//     }
+// }
+
+// Paso 3: Actualiza el contenido del <div> con el nombre de usuario
 
 // let elementoExistente = document.getElementById('FilaTablero');
 // console.log (elementoExistente);
@@ -56,8 +87,8 @@ const createRows = (userLevel) => {
         for (let j = 0; j < 5; j++) {
             let cellsrow = document.createElement("div");
             cellsrow.classList.add("circleBoard")
-            cellsrow.id = `circleBoard-${i}`  
-            rowsGameboard.appendChild(cellsrow); 
+            cellsrow.id = `circleBoard-${i}`
+            rowsGameboard.appendChild(cellsrow);
         }
     }
 

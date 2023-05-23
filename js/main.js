@@ -1,4 +1,7 @@
 // Funcion para el logo, no queria meterlo en el html para que no se me moviese el diseño
+const game = () => {
+    window.location.href = "./game.html";
+}
 
 const comeBackHome = () => {
     window.location.href = "../index.html";
@@ -81,7 +84,11 @@ for (let i = 0; i < arrayLevel.length; i++) {
     arrayLevel[i].addEventListener('change', () => { 
     emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
     arrayNewColors[i] = arrayLevel[i].value;
+
     arrayLevel[i].disabled = true;
+
+    let newColors = JSON.stringify(arrayNewColors);
+    sessionStorage.setItem('newColors', newColors);
     });
 }
 
@@ -93,11 +100,6 @@ loopGetColors(arrayColorsMedium, emptyBubblesMedium);
 loopGetColors(arrayColorsDif, emptyBubblesDif);
 
 console.log (arrayNewColors);
-
-// session storage del array de colores
-
-let newColors = JSON.stringify(arrayNewColors);
-sessionStorage.setItem('newColors', newColors);
 
 // efecto maquina de escribir
 

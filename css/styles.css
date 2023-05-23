@@ -201,6 +201,7 @@ input[type="color"] {
 }
 .circleBoard {
 border: solid var(--color-third) 0.05rem; 
+margin: 0.3rem;
 }
 
 .mm-hidden {
