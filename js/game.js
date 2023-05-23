@@ -10,9 +10,8 @@ const createLevelBoard = (howMany) => {
         let clonedSelector = document.createElement("div");
         clonedSelector.classList.add('circleBoard');
         clonedSelector.style.backgroundColor = selectedColors[i];
-        clonedSelector[i].addEventListener('click', clickSelector());
-        divSelectedColors.appendChild(clonedSelector);
-        
+        // clonedSelector[i].addEventListener('click', clickSelector());
+        divSelectedColors.appendChild(clonedSelector); 
     }
 }
 
@@ -28,24 +27,26 @@ if (selectedLevel === 'level1') {
 // utilizar un switch (?)
 
 let secretCombo = [];
-function colorsRandom(selectedColors) {
+let insightCombo = document.getElementById('insightCombo')
+
+const colorsRandom = (selectedColors) => {
     for (let i = 0; i < 4; i++) {
-        let randomIndex = Math.floor(Math.random()*selectedColors.length);
-        secretCombo.push(array[randomIndex]);
+        let randomIndex = Math.floor(Math.random() * selectedColors.length);
+        secretCombo.push(selectedColors[randomIndex]);
     }
     return secretCombo;
 }
 
-const showRandomCombo = (howMany) => {
-    for (let i = 0; i < howMany; i++) {
-        let clonedSelector = document.createElement("div");
-        clonedSelector.classList.add('circleBoard');
-        clonedSelector.style.backgroundColor = selectedColors[i];
-        clonedSelector[i].addEventListener('click', clickSelector());
-        divSelectedColors.appendChild(clonedSelector);
-        
-    }
-}
+secretCombo.forEach((arrayColorValue) => {
+    let insightCircle = document.createElement("div");
+    insightCircle.classList.add('circleBoard');
+    insightCircle.style.backgroundColor = arrayColorValue;
+    insightCombo.appendChild(insightCircle);
+});
+    
+
+
+
 
 // const createSelectors = (selectedColors) => {
 //     for (let i = 0; i < selectedColors.length; i++) {
