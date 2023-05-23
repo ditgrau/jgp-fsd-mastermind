@@ -1,4 +1,6 @@
 
+// level board - bubbles colored
+
 let selectedColors = JSON.parse(sessionStorage.getItem('newColors'));
 let selectedLevel = sessionStorage.getItem('level');
 let divSelectedColors = document.getElementById('levelBoard');
@@ -7,7 +9,10 @@ const createLevelBoard = (howMany) => {
     for (let i = 0; i < howMany; i++) {
         let clonedSelector = document.createElement("div");
         clonedSelector.classList.add('circleBoard');
+        clonedSelector.style.backgroundColor = selectedColors[i];
+        clonedSelector[i].addEventListener('click', clickSelector());
         divSelectedColors.appendChild(clonedSelector);
+        
     }
 }
 
@@ -15,11 +20,32 @@ if (selectedLevel === 'level1') {
     createLevelBoard(4)
 } else if (selectedLevel === 'level2') {
     createLevelBoard(5)
-} else
+} else if (selectedLevel === 'level3') {
     createLevelBoard(6)
+} else {
+    createLevelBoard(4)
+}
+// utilizar un switch (?)
 
+let secretCombo = [];
+function colorsRandom(selectedColors) {
+    for (let i = 0; i < 4; i++) {
+        let randomIndex = Math.floor(Math.random()*selectedColors.length);
+        secretCombo.push(array[randomIndex]);
+    }
+    return secretCombo;
+}
 
-
+const showRandomCombo = (howMany) => {
+    for (let i = 0; i < howMany; i++) {
+        let clonedSelector = document.createElement("div");
+        clonedSelector.classList.add('circleBoard');
+        clonedSelector.style.backgroundColor = selectedColors[i];
+        clonedSelector[i].addEventListener('click', clickSelector());
+        divSelectedColors.appendChild(clonedSelector);
+        
+    }
+}
 
 // const createSelectors = (selectedColors) => {
 //     for (let i = 0; i < selectedColors.length; i++) {
