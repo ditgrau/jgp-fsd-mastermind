@@ -108,6 +108,7 @@ const comment2 = document.getElementById("second-comment");
 const comment3 = document.getElementById("third-comment");
 
 
+
 const mmtypewriter = (comment, time, div)=>{
     let arrayComent = comment.split("");
     div.innerHTML = "";
@@ -122,6 +123,7 @@ const mmtypewriter = (comment, time, div)=>{
 }
 
 mmtypewriter("<-- Juego creado por Judit Grau -->", 100, comment1)
+
 
 
 ///////////////////////^^^^^^^^^^^ LIMPIO
