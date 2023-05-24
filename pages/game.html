@@ -25,14 +25,14 @@
         </div>
     </nav>
     <div class="row mt-5 p-0 m-0">
-        <p class="text-center mastermindHead h4 m-0" onclick="comeBackHome()"><span class="blue">~master</span><span class="keywords">(</span><span
-                class="string">"mind"</span><span class="keywords">)</span>;
+        <p class="text-center mastermindHead h4 m-0" onclick="comeBackHome()"><span class="blue">~master</span><span
+                class="keywords">(</span><span class="string">"mind"</span><span class="keywords">)</span>;
         </p>
-        <div class="div d-flex justify-content-center bg-primary">
-            <div class="col-4 bg-danger" id="insightCombo"></div>
+        <div class="div d-flex justify-content-center">
+            <div class="row flex-row" id="insightCombo"></div>
         </div>
     </div>
-    <div class="container m-0 p-0 mm-display d-flex">
+    <div class="container-fluid m-0 p-0 justify-content-center d-flex">
         <!-- <div class="row row-cols-2 m-0 p-0" id="">
             <div class="row m-0 p-0 my-3 justify-content-center ">
                 <div class="circleColorEasy m-2" id="bub-picker01"></div>
@@ -41,7 +41,7 @@
                 <div class="circleColorEasy m-2" id="bub-picker04"></div>
             </div>
         </div> -->
-        <div class="div bg-danger justify-content-center bg-danger mx-5" id="gameBoard">
+        <div class="justify-content-center mx-5" id="gameBoard">
             <!-- <div class="row m-0 p-0 " id="rowGameboard">
                 <div class="col circleBoard m-1 p-0" id="cell1"></div>
                 <div class="col circleBoard m-1 p-0" id="cell2"></div>
@@ -59,17 +59,15 @@
                 </div>
             </div> -->
         </div>
-        <div class="bg-warning m-0 p-0 mx-4 bg-warning" id="levelBoard">
-                <!-- <div class="col circleBoard m-1 p-0" id="cell1"></div>
-                <div class="col circleBoard m-1 p-0" id="cell2"></div>
-                <div class="col circleBoard m-1 p-0" id="cell3"></div>
-                <div class="col circleBoard m-1 p-0" id="cell4"></div> -->
-            </div>
-        </div>
+        <div class="m-0 p-0" id="levelBoard">
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-            crossorigin="anonymous"></script>
-        <script src="../js/game.js"></script>
-        <script src="../js/main.js"></script>
+            <div class="checkButton">?</div>
+            <div class="checkButton">:</div>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+                crossorigin="anonymous"></script>
+            <script src="../js/game.js"></script>
+            <script src="../js/main.js"></script>
 </body>

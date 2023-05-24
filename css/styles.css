@@ -27,32 +27,32 @@
 body {
     background-color: #141414;
     font-size: 0.95rem;
-    user-select: none;  
+    user-select: none;
 }
 
 .mm-mainBody {
     height: 100vh;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }
 
 .mm-playerBody {
     height: 75vh;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }
 
 .mm-secondBody {
     height: 45vh;
-    display:flex;
-    align-items:end;
+    display: flex;
+    align-items: end;
     margin: 0;
     padding: 0;
 }
 
 .mm-thirdBody {
     height: 35vh;
-    display:flex;
+    display: flex;
     justify-content: center;
     margin: 0;
     padding: 0;
@@ -76,7 +76,7 @@ body {
     border: 1px solid transparent;
 }
 
-.mm-instructions{
+.mm-instructions {
     border: solid var(--color-third) 0.05rem;
     border-radius: 0.5rem;
 }
@@ -116,24 +116,20 @@ input[type="color"] {
     width: 2rem;
 }
 
-.circleColorEasy, .circleColorMedium, .circleColorDif {
+.circleColorEasy,
+.circleColorMedium,
+.circleColorDif {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
-    border: solid var(--color-third) 0.05rem; 
-}
-
-.circleColor {
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
+    border: solid var(--color-third) 0.1rem;
 }
 
 .numberVsc {
-    color:#6c6c6c;
+    color: #6c6c6c;
 }
 
-.mastermindHead{
+.mastermindHead {
     cursor: pointer;
 }
 
@@ -142,78 +138,111 @@ input[type="color"] {
 .yellow {
     color: var(--color-yellow-2);
 }
+
 .yellowtext {
     color: var(--color-yellow);
 }
+
 .comment {
     color: var(--color-comment);
 }
+
 .keywords {
     color: var(--color-keywords);
 }
+
 .blue {
     color: var(--color-blue);
 }
+
 .string {
     color: var(--color-string);
 }
+
 .sea {
     color: var(--color-sea);
 }
+
 .almostWhite {
     color: var(--color-almostwhite);
 }
-.pathGit{
+
+.pathGit {
     color: var(--color-pathGit);
 }
+
 .userGit {
     color: var(--color-userGit)
 }
+
 .osGit {
     color: var(--color-osGit);
 }
-.branchGit{
+
+.branchGit {
     color: var(--color-branchGit);
 }
 
 /* gameboard */
 
-.circleGrid {
-    height: 1.2rem;
-    width: 1.2rem;
-    border-radius: 50%;
-    border: solid var(--color-third) 0.05rem; 
-}
-
-.grid-circles {
-    height: 4rem;
-    width: 4rem;
-}
-
 .blueSelection {
     color: var(--color-selection);
 }
 
-.circleBoard, .circleBoardEmpty{
+.circleColorBoard {
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
+    border: solid var(--color-third)  0.1rem;
+    background-color: rgb(26, 26, 26);
+    margin: 0.3rem;
+    padding: 0.3rem;
 }
-.circleBoard {
-border: solid var(--color-third) 0.05rem; 
-margin: 0.3rem;
+
+.circleGrid {
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    border: solid rgb(82, 82, 82) 0.08rem;
+    background-color: rgb(26, 26, 26);
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    margin: 0.3rem;
+    padding: 0;
+    height: 3rem;
+    width: 3rem;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
 .mm-hidden {
     display: none;
 }
 
+.checkButton {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+    border: solid var(--color-third)  0.1rem;
+    background-color: rgb(29, 29, 29);
+    margin: 0.3rem;
+    padding: 0.3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* media */
 
 @media (max-width:1199px) {
-    
-    .supertitle{
+
+    .supertitle {
         font-size: 2em;
     }
-    
+
 }

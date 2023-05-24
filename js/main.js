@@ -42,7 +42,7 @@ const bubbles4 = () => {
     document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
     changeNavbarLevel();
     // saveLevel("mm-levelEasy");
-    sessionStorage.setItem('level', 'level1');
+    sessionStorage.setItem('level', '10');
 }
 
 const bubbles5 = () => {
@@ -50,7 +50,7 @@ const bubbles5 = () => {
     document.getElementById("mm-levelTwoBubbles").classList.remove("mm-hidden");
     changeNavbarLevel();
     // saveLevel("mm-levelMed");
-    sessionStorage.setItem('level', 'level2');
+    sessionStorage.setItem('level', '8');
 }
 
 const bubbles6 = () => {
@@ -58,7 +58,7 @@ const bubbles6 = () => {
     document.getElementById("mm-levelThreeBubbles").classList.remove("mm-hidden");
     changeNavbarLevel();
     // saveLevel("mm-levelDif");
-    sessionStorage.setItem('level', 'level3');
+    sessionStorage.setItem('level', '6');
 }
 
 // funcion consola Git
@@ -108,9 +108,9 @@ const comment2 = document.getElementById("second-comment");
 const comment3 = document.getElementById("third-comment");
 
 
-const mmtypewriter = (comment, time = 200, div)=>{
-let arrayComent = comment.split("")
-    div.innerHTML = ""
+const mmtypewriter = (comment, time, div)=>{
+    let arrayComent = comment.split("");
+    div.innerHTML = "";
     let cont = 0
     let writeComment = setInterval (()=>{
         div.innerHTML += arrayComent[cont];

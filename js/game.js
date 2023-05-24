@@ -5,44 +5,105 @@ let selectedColors = JSON.parse(sessionStorage.getItem('newColors'));
 let selectedLevel = sessionStorage.getItem('level');
 let divSelectedColors = document.getElementById('levelBoard');
 
-const createLevelBoard = (howMany) => {
-    for (let i = 0; i < howMany; i++) {
+
+const createLevelBoard = () => {
+    for (let i = 0; i < selectedColors.length; i++) {
         let clonedSelector = document.createElement("div");
-        clonedSelector.classList.add('circleBoard');
+        clonedSelector.classList.add('circleColorBoard');
         clonedSelector.style.backgroundColor = selectedColors[i];
         // clonedSelector[i].addEventListener('click', clickSelector());
         divSelectedColors.appendChild(clonedSelector); 
     }
 }
 
-if (selectedLevel === 'level1') {
-    createLevelBoard(4)
-} else if (selectedLevel === 'level2') {
-    createLevelBoard(5)
-} else if (selectedLevel === 'level3') {
-    createLevelBoard(6)
-} else {
-    createLevelBoard(4)
-}
-// utilizar un switch (?)
+createLevelBoard();
+
+// secret combination
 
 let secretCombo = [];
-let insightCombo = document.getElementById('insightCombo')
 
-const colorsRandom = (selectedColors) => {
+const colorsRandom = () => {
     for (let i = 0; i < 4; i++) {
         let randomIndex = Math.floor(Math.random() * selectedColors.length);
         secretCombo.push(selectedColors[randomIndex]);
     }
-    return secretCombo;
+    console.log (secretCombo);
+    console.log (selectedColors);
+    
+};
+colorsRandom();
+
+//  secret board
+
+let divInsightColors = document.getElementById('insightCombo');
+
+const createInsightBoard = () => {
+    for (let i = 0; i < 4; i++) {
+        let insightBubble = document.createElement("div");
+        insightBubble.classList.add('circleColorBoard');
+        insightBubble.style.backgroundColor = secretCombo[i];
+        // clonedSelector[i].addEventListener('click', clickSelector());
+        divInsightColors.appendChild(insightBubble); 
+    }
+} 
+
+createInsightBoard();
+
+
+const createRows = (userLevel) => {
+
+    for (let i = 0; i < userLevel; i++) {
+        let rowsGameboard = document.createElement("div");
+        rowsGameboard.classList.add("row");
+        // rowsGameboard.id = `rowGameboard-${i}`;
+        gameBoard.appendChild(rowsGameboard);
+
+
+        let snitchDiv = document.createElement("div");
+        snitchDiv.classList.add("grid");
+        rowsGameboard.appendChild(snitchDiv);
+        
+        for (let k = 0; k < 4; k++) {
+            let snitch = document.createElement("div");
+            snitch.classList.add("circleGrid");
+            snitchDiv.appendChild(snitch);
+        }
+
+        for (let j = 0; j < 4; j++) {
+                let cellsrow = document.createElement("div");
+                cellsrow.classList.add("circleColorBoard");
+                rowsGameboard.appendChild(cellsrow);
+            }
+
+        
+    }
+}
+            //             let cellsgrid = document.createElement("div");
+            // cellsgrid.classList.add("circleGrid");
+            // rowsGameboard.appendChild(cellsgrid);
+
+            // }
+            // tablero.innerHTML += `<div id='fila${contador}' class='fila' onclick='pintaBola(${contador})'>${contador}</div>`;
+
+            //     for (let k = 0; k < 4; k++) {
+
+
+        
+    
+
+createRows(10);
+
+
+const createCells = () => {
+
+    
 }
 
-secretCombo.forEach((arrayColorValue) => {
-    let insightCircle = document.createElement("div");
-    insightCircle.classList.add('circleBoard');
-    insightCircle.style.backgroundColor = arrayColorValue;
-    insightCombo.appendChild(insightCircle);
-});
+
+
+
+// .some, si algun elemento del array cumple la condicion: estar dentro del array dos
+
     
 
 
@@ -101,27 +162,11 @@ secretCombo.forEach((arrayColorValue) => {
 // ////////// para crear las bolitas elegidas  en el tablero
 
 
-let userLevel = sessionStorage.getItem('level');
-let gameBoard = document.getElementById('gameBoard');
+// let userLevel = sessionStorage.getItem('level');
+// let gameBoard = document.getElementById('gameBoard');
 
-const createRows = (userLevel) => {
 
-    for (let i = 0; i < userLevel; i++) {
-        let rowsGameboard = document.createElement("div");
-        rowsGameboard.classList.add("row");
-        rowsGameboard.id = `rowGameboard-${i}`;
-        gameBoard.appendChild(rowsGameboard);
-        for (let j = 0; j < 5; j++) {
-            let cellsrow = document.createElement("div");
-            cellsrow.classList.add("circleBoard")
-            cellsrow.id = `circleBoard-${i}`
-            rowsGameboard.appendChild(cellsrow);
-        }
-    }
-
-}
-
-createRows(3);
+// createRows(3);
 
 // if (userLevel === "level") {
 //     createRows(10);
