@@ -77,6 +77,7 @@ const createRows = (numberRows) => {
                 cellsrow.classList.add("circleColorBoard");
                 rowsGameboard.appendChild(cellsrow);
                 cellsrow.id = `cell-${j}-row-${i}`;
+                cellsrow.classList.add (`mirow-${i}`)
             }
     }
 }
@@ -89,19 +90,77 @@ createRows (selectedLevel);
 
 
 
-let contador = 0;
-const pintarBolas = () => {
+// let numeroClics = 0;
+
+// const pintarBolas = () => {
+//     console.log("clic en el botón");
+//     if (numeroClics<selectedColors.length) {
+//         clicable.style.backgroundColor = selectedColors[numeroClics];
+//         numeroClics ++;
+//     }else {
+//         numeroClics = 0;
+//     }
+// }
+
+// let clicable = document.getElementById("cell-0-row-0")
+// clicable.addEventListener('click', pintarBolas);
+
+
+// 
+
+
+
+
+//////////////////// esta funcion recorre con todas las bolitas de la msima fila
+
+let numeroClics = 0;
+
+const pintarBolas = (clicable) => {
     console.log("clic en el botón");
-    if (contador<selectedColors.length) {
-        clicable.style.backgroundColor = selectedColors[contador];
-        contador ++;
+    if (numeroClics<selectedColors.length) {
+        clicable.style.backgroundColor = selectedColors[numeroClics];
+        numeroClics ++;
     }else {
-        contador = 0;
+        numeroClics = 0;
     }
-    
-    }
+}
 
-let clicable = document.getElementById("cell-0-row-0")
-clicable.addEventListener('click', pintarBolas);
+console.log(arrayByRows);
+let clicablearray = Array.from(document.getElementsByClassName("mirow-0"));
+clicablearray.forEach((clicable)=> {
+    clicable.addEventListener('click',() => pintarBolas(clicable));
+
+});
 
 
+/////////////////////////////////////
+
+// check button and delete
+
+let checkButton = document.getElementById('checkButton');
+let dismissButon = document.getElementById('dismissButon');
+
+let arrayByRows = [];
+const saveCombi = ()=> {
+
+}
+saveCombi ()
+checkCombi ()
+dismissCombi()
+/////////////////////////////////
+
+
+function tienenElementoComun(array1, array2) {
+    return array1.some(elemento => array2.includes(elemento));
+  }
+  
+  // Ejemplo de uso
+  const array1 = [1, 2, 3, 4];
+  const array2 = [5, 6, 3, 8];
+  
+  if (tienenElementoComun(array1, array2)) {
+    console.log("Los arrays tienen al menos un elemento en común.");
+  } else {
+    console.log("Los arrays no tienen elementos en común.");
+  }
+  
