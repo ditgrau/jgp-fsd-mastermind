@@ -93,7 +93,6 @@ loopGetColors(arrayColorsEasy, emptyBubblesEasy);
 loopGetColors(arrayColorsMedium, emptyBubblesMedium);
 loopGetColors(arrayColorsDif, emptyBubblesDif);
 
-console.log (arrayNewColors);
 
 // efecto maquina de escribir
 
