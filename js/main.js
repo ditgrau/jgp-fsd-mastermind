@@ -7,9 +7,15 @@ const comeBackHome = () => {
     window.location.href = "../index.html";
 }
 
+// session storage // recoger el nivel
+
+const saveLevel = (levelRows) => {
+    sessionStorage.setItem('level', levelRows);
+}
+
 // session storage // recoger el nombre usuario
 
-const saveName =() => {  
+const saveName = () => {  
     let userPlayer = document.getElementById("userName").value; 
     if (userPlayer.length!==0){
     sessionStorage.setItem('user', userPlayer);
@@ -18,15 +24,6 @@ const saveName =() => {
         mmtypewriter("<-- Escribe tu nombre -->", 80, comment2)
     }
 }
-
-/* // session storage // recoger el nivel */
-
-// const saveLevel =(textFromId) => {        
-//     let userLevelText = document.getElementById(textFromId).textContent;
-//     sessionStorage.setItem('userLevel',userLevelText);
-//     console.log (userLevelText);
-//     }
-    
 
 //Función para cambiar la Navbar de la pagina de nivel"
 
@@ -41,24 +38,21 @@ const bubbles4 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
     changeNavbarLevel();
-    // saveLevel("mm-levelEasy");
-    sessionStorage.setItem('level', '10');
+    saveLevel(10);
 }
 
 const bubbles5 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelTwoBubbles").classList.remove("mm-hidden");
     changeNavbarLevel();
-    // saveLevel("mm-levelMed");
-    sessionStorage.setItem('level', '8');
+    saveLevel(8);
 }
 
 const bubbles6 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelThreeBubbles").classList.remove("mm-hidden");
     changeNavbarLevel();
-    // saveLevel("mm-levelDif");
-    sessionStorage.setItem('level', '6');
+    saveLevel(6);
 }
 
 // funcion consola Git
@@ -80,20 +74,20 @@ let emptyBubblesDif = Array.from( document.getElementsByClassName("circleColorDi
 let arrayNewColors = [];
 
 const loopGetColors = (arrayLevel, emptyBubblesLevel) => { 
+
 for (let i = 0; i < arrayLevel.length; i++) {
     arrayLevel[i].addEventListener('change', () => { 
     emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
     arrayNewColors[i] = arrayLevel[i].value;
-
-    arrayLevel[i].disabled = true;
-
+    
     let newColors = JSON.stringify(arrayNewColors);
     sessionStorage.setItem('newColors', newColors);
-    });
+    }); 
 }
 
 return arrayNewColors;
 }
+
     
 loopGetColors(arrayColorsEasy, emptyBubblesEasy);
 loopGetColors(arrayColorsMedium, emptyBubblesMedium);
@@ -128,6 +122,31 @@ mmtypewriter("<-- Juego creado por Judit Grau -->", 100, comment1)
 
 ///////////////////////^^^^^^^^^^^ LIMPIO
 
+// const loopGetColors = (arrayLevel, emptyBubblesLevel) => { 
+
+//     vueltas = 0;
+    
+//     for (let i = 0; i < arrayLevel.length; i++) {
+//         arrayLevel[i].addEventListener('change', () => { 
+//         emptyBubblesLevel[i].style.backgroundColor = arrayLevel[i].value;
+//         arrayNewColors[i] = arrayLevel[i].value;
+        
+//         let newColors = JSON.stringify(arrayNewColors);
+//         sessionStorage.setItem('newColors', newColors);
+    
+//         vueltas ++
+    
+//         if (vueltas === arrayLevel.length) {
+//             setTimeout(() => {
+//                 window.location.href = 'consola.html';
+//             }, 500);
+//         }
+    
+//         }); 
+    
+//     }
+    
+//     return arrayNewColors;
 
 
 
