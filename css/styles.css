@@ -255,10 +255,20 @@ input[type="color"] {
 
 /* media */
 
-@media (max-width:1199px) {
+@media (max-width:1000px) {
+    .supertitle {
+        font-size: 4em;
+    }
+}
 
+@media (max-width:770px) {
+    .supertitle {
+        font-size: 3em;
+    }
+}
+
+@media (max-width:480px) {
     .supertitle {
         font-size: 2em;
     }
-
 }
