@@ -55,8 +55,8 @@
     <div class="container-fluid" id="levelSelectors">
 
         <!-- choose levels -->
-        <div class="row rowLevel align-items-center">
-            <div class="col" id="mm-levels">
+        <div class="row rowLevel align-items-center" id="mm-levels">
+            <div class="col">
                 <p class="h1 text-center mb-4">Niveles</p>
                 <div class="container">
                     <div class="row justify-content-center">
@@ -78,67 +78,76 @@
         </div>
 
         <!-- level - bubbles -->
-        <div class="mm-hidden pageColorPicker" id="mm-levelOneBubbles">
-            <!-- title -->
-            <div class="row m-0 p-0">
+        <div class="row pageColorPicker align-items-center mm-hidden" id="mm-levelOneBubbles">
+            <div class="col">
+                <!-- title -->
                 <p class="h1 text-center" id="mm-levelEasy">Level</p>
-            </div>
-            <!-- empty bubbles -->
-            <div class="row m-0 p-0 my-3 justify-content-center ">
-                <div class="circleColorEasy m-2" id="bub-picker01"></div>
-                <div class="circleColorEasy m-2" id="bub-picker02"></div>
-                <div class="circleColorEasy m-2" id="bub-picker03"></div>
-                <div class="circleColorEasy m-2" id="bub-picker04"></div>
-            </div>
-            <!-- subtitle -->
-            <div class="row m-0 p-0">
-                <p class="text-center m-1">Selector de colores</p>
-            </div>
-            <!-- color pickers -->
-            <div class="row m-0 p-0 justify-content-center ">
-                <input type="color" id="picker00" name="pickerEasy" value="#ff8af5" class="mx-3 my-2 p-0">
-                <input type="color" id="picker01" name="pickerEasy" value="#65e66e" class="mx-3 my-2 p-0">
-                <input type="color" id="picker02" name="pickerEasy" value="#ffe770" class="mx-3 my-2 p-0">
-                <input type="color" id="picker03" name="pickerEasy" value="#85e0ff" class="mx-3 my-2 p-0">
-            </div>
-            <div class="row m-0 p-0 mt-3 justify-content-center ">
-                <div class="enterButton keypad d-flex justify-content-end">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="m-0 p-0 mx-1 bi bi-arrow-return-left" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
-                    </svg>
-                    <p class="m-0 p-0">Enter</p>
+                <!-- empty bubbles -->
+                <div class="row m-0 p-0 my-3 justify-content-center ">
+                    <div class="circleColorEasy m-2" id="bub-picker01"></div>
+                    <div class="circleColorEasy m-2" id="bub-picker02"></div>
+                    <div class="circleColorEasy m-2" id="bub-picker03"></div>
+                    <div class="circleColorEasy m-2" id="bub-picker04"></div>
+                </div>
+                <!-- subtitle -->
+                <div class="row m-0 p-0">
+                    <p class="text-center m-1">Selector de colores</p>
+                </div>
+                <!-- color pickers -->
+                <div class="row m-0 p-0 justify-content-center ">
+                    <input type="color" id="picker00" name="pickerEasy" value="#ff8af5" class="mx-3 my-2 p-0">
+                    <input type="color" id="picker01" name="pickerEasy" value="#65e66e" class="mx-3 my-2 p-0">
+                    <input type="color" id="picker02" name="pickerEasy" value="#ffe770" class="mx-3 my-2 p-0">
+                    <input type="color" id="picker03" name="pickerEasy" value="#85e0ff" class="mx-3 my-2 p-0">
+                </div>
+                <div class="row m-0 p-0 mt-4 justify-content-center ">
+                    <div class="enterButton keypad d-flex justify-content-end" onclick="game()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="m-0 p-0 mx-1 bi bi-arrow-return-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+                        </svg>
+                    </div>
                 </div>
             </div>
-
         </div>
 
         <!-- level2 - bubbles -->
-        <div class="container mm-hidden" id="mm-levelTwoBubbles">
-            <!-- title -->
-            <div class="row m-0 p-0">
-                <p class="h1 text-center" id="mm-levelMed">Level++</p>
-            </div>
-            <!-- empty bubbles -->
-            <div class="row m-0 p-0 my-3 justify-content-center ">
-                <div class="circleColorMedium m-2"></div>
-                <div class="circleColorMedium m-2"></div>
-                <div class="circleColorMedium m-2"></div>
-                <div class="circleColorMedium m-2"></div>
-                <div class="circleColorMedium m-2"></div>
-            </div>
-            <!-- subtitle -->
-            <div class="row m-0 p-0">
-                <p class="text-center m-1">Selector de colores</p>
-            </div>
-            <!-- color pickers -->
-            <div class="row m-0 p-0 justify-content-center ">
-                <input type="color" id="picker04" name="pickerMedium" value="#ff8af5" class="mx-3 my-2 p-0">
-                <input type="color" id="picker05" name="pickerMedium" value="#65e66e" class="mx-3 my-2 p-0">
-                <input type="color" id="picker06" name="pickerMedium" value="#ffe770" class="mx-3 my-2 p-0">
-                <input type="color" id="picker07" name="pickerMedium" value="#85e0ff" class="mx-3 my-2 p-0">
-                <input type="color" id="picker08" name="pickerMedium" value="#ff9924" class="mx-3 my-2 p-0">
+        <div class="row pageColorPicker align-items-center mm-hidden" id="mm-levelTwoBubbles">
+            <div class="col">
+                <div class="row m-0 p-0">
+                    <p class="h1 text-center" id="mm-levelMed">Level++</p>
+                </div>
+                <!-- empty bubbles -->
+                <div class="row m-0 p-0 my-3 justify-content-center ">
+                    <div class="circleColorMedium m-2"></div>
+                    <div class="circleColorMedium m-2"></div>
+                    <div class="circleColorMedium m-2"></div>
+                    <div class="circleColorMedium m-2"></div>
+                    <div class="circleColorMedium m-2"></div>
+                </div>
+                <!-- subtitle -->
+                <div class="row m-0 p-0">
+                    <p class="text-center m-1">Selector de colores</p>
+                </div>
+                <!-- color pickers -->
+                <div class="row m-0 p-0 justify-content-center ">
+                    <input type="color" id="picker04" name="pickerMedium" value="#ff8af5" class="mx-3 my-2 p-0">
+                    <input type="color" id="picker05" name="pickerMedium" value="#65e66e" class="mx-3 my-2 p-0">
+                    <input type="color" id="picker06" name="pickerMedium" value="#ffe770" class="mx-3 my-2 p-0">
+                    <input type="color" id="picker07" name="pickerMedium" value="#85e0ff" class="mx-3 my-2 p-0">
+                    <input type="color" id="picker08" name="pickerMedium" value="#ff9924" class="mx-3 my-2 p-0">
+                </div>
+                <div class="row m-0 p-0 mt-4 justify-content-center ">
+                    <div class="enterButton keypad d-flex justify-content-end" onclick = "game()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="m-0 p-0 mx-1 bi bi-arrow-return-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+                        </svg>
+                        <!-- <p class="m-0 p-0 bton-alert">Enter</p> -->
+                    </div>
+                </div>
             </div>
         </div>
 

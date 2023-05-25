@@ -28,7 +28,7 @@ body {
     background-color: #141414;
     font-size: 0.95rem;
     user-select: none;
-    height: 100vh;
+    height: 90vh;
 }
 
 .mm-mainBody {
@@ -63,6 +63,11 @@ body {
     height: 70vh;
 }
 
+.pageColorPicker {
+    height: 75vh;
+}
+
+
 .mm-nav {
     background-color: var(--color-second);
 }
@@ -76,7 +81,7 @@ body {
     border-color: var(--color-third);
 }
 
-.mm-button:hover {
+.mm-button:hover, .keypad:hover {
     background-color: var(--color-second);
     border: 1px solid transparent;
 }
@@ -247,6 +252,7 @@ input[type="color"] {
     padding: 0.3rem;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 #gitConsole {
