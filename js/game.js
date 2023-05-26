@@ -29,7 +29,7 @@ const colorsRandom = () => {
 colorsRandom();
 
 
-//  secret board
+//  secret board - contains the secret combination
 
 let divInsightColors = document.getElementById('insightCombo');
 
@@ -85,57 +85,12 @@ createRows (selectedLevel);
 
 
 
-
-// esta funcion recorre el array de colores, ME SIRVE!!
-
-
-
-// let numeroClics = 0;
-
-// const pintarBolas = () => {
-//     console.log("clic en el botón");
-//     if (numeroClics<selectedColors.length) {
-//         clicable.style.backgroundColor = selectedColors[numeroClics];
-//         numeroClics ++;
-//     }else {
-//         numeroClics = 0;
-//     }
-// }
-
-// let clicable = document.getElementById("cell-0-row-0")
-// clicable.addEventListener('click', pintarBolas);
-
-
-// 
-
-
-
-
-//////////////////// esta funcion recorre con todas las bolitas de la msima fila
-
-// let numeroClics = 0;
-// let clicablearray = Array.from(document.getElementsByClassName("mirow-6"));
-
-// const pintarBolas = (clicable) => {
-//     console.log("clic en el botón");
-//     if (numeroClics<selectedColors.length) {
-//         clicable.style.backgroundColor = selectedColors[numeroClics];
-//         numeroClics ++;
-//     }else {
-//         numeroClics = 0;
-//     }
-// }
-
-// clicablearray.forEach((clicable)=> {
-//     clicable.addEventListener('click',() => pintarBolas(clicable));
-// });
-
-
-/////////////////////////////////////
+// Paint the cells of each row
 
 let numeroClics = 0;
 let rowContador = 0;
 let clicablearray = Array.from(document.getElementsByClassName(`mirow-${rowContador}`));
+
 
 const pintarBolas = (clicable) => {
     console.log("clic en el botón");
@@ -151,8 +106,39 @@ clicablearray.forEach((clicable)=> {
         });
 console.log(rowContador);
 
+// clicks of the check button
 
-const desbloquearFila = ()=>{
+        // capture colours in an array
+
+
+const rgbToHex = (rgb) => {
+    let rgbArray = rgb.split(',').map(Number);
+    let hexArray = rgbArray.map((value) => {
+    let hex = value.toString(16);
+        return hex.length === 1 
+        ? '0' + hex 
+        : hex;
+        });
+    return '#' + hexArray.join('');
+};
+
+const captureColors = () => {
+    currentArray = clicablearray.map((e) => {
+        let rgbColor = e.style.backgroundColor;
+        let rgbNumbers = rgbColor.slice(4, 17);
+        let hexNumbers = rgbToHex(rgbNumbers);
+        return hexNumbers;
+        });
+    console.log (currentArray);
+};
+
+
+
+
+    // unblocking rows
+
+const unblockRows = ()=>{
+    console.log (clicablearray);
     rowContador++
     console.log (rowContador);
     clicablearray = Array.from(document.getElementsByClassName(`mirow-${rowContador}`));
@@ -163,34 +149,6 @@ const desbloquearFila = ()=>{
 
 
 
-// const checkCombi = () => {
-    
-//     //// aqui tengo que meter mmi codigo de comprobacion de colores o invocar a la funcion
-//     console.log("estoy aqui");
-//     rowContador++
-//     clicableArray = Array.from(document.getElementsByClassName(`mirow-${rowContador}`));
-//     numeroClics = 0;
-//    
-// }
-
-// do {
-//     clicablearray.forEach((clicable)=> {
-//         clicable.addEventListener('click',() => pintarBolas(clicable));
-//     });
-    
-// } while (false);
-
-
-
-// let rowContador = 0;
-
-
-
-
-
-
-
-
 
 
 // // check button and delete
@@ -198,21 +156,6 @@ const desbloquearFila = ()=>{
 // let checkButton = document.getElementById('checkButton');
 // let dismissButton = document.getElementById('dismissButton');
 
-
-// const saveCombi = ()=> {
-//     let arrayToCompare = [];
-//     for (var clicable of clicablearray) {
-//     var colorToCompare = clicable.style.backgroundColor;
-//     arrayToCompare.push(colorToCompare);
-//     console.log(arrayToCompare);
-//     }
-//     console.log(arrayToCompare);
-// }
-
-// saveCombi ()
-// checkCombi ()
-// dismissCombi()
-// /////////////////////////////////
 
 
 // function tienenElementoComun(array1, array2) {
@@ -228,4 +171,3 @@ const desbloquearFila = ()=>{
 //   } else {
 //     console.log("Los arrays no tienen elementos en común.");
 //   }
-  
