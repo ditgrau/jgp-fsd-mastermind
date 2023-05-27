@@ -21,6 +21,7 @@ for (let i = 0; i < 4; i++) {
     }
 }
 colorsRandom();
+console.log (colorsRandom);
 
 // secret board - contains the secret combination /////////////////// TENGO QUE OCULTARLA CLASS 'HIDEN'
 const createInsightBoard = () => {
@@ -82,6 +83,8 @@ dismissBtn.addEventListener("click", () => {
     });
 });
 
+// check btn //////////////////////////////////////////////////////////////////////
+
 // Paint the cells of each row
 
 let numeroClics = 0;
@@ -99,71 +102,40 @@ const pintarBolas = (clicable) => {
     }
 }
 clicablearray.forEach((clicable)=> {
-            clicable.addEventListener('click',() => pintarBolas(clicable));
-        });
+clicable.addEventListener('click',() => pintarBolas(clicable));
+});
 
+        // const rgbToHex = (rgb) => {
+        //     let rgbArray = rgb.split(',').map(Number);
+        //     let hexArray = rgbArray.map((value) => {
+        //     let hex = value.toString(16);
+        //         return hex.length === 1 
+        //         ? '0' + hex 
+        //         : hex;
+        //         });
+        //     return '#' + hexArray.join('');
+        // };
+        
+const captureColors = () => {
+    currentArray = clicablearray.map((e) => {
+        let rgbColor = e.style.backgroundColor;
+        // let rgbNumbers = rgbColor.slice(4, 17);
+        // let hexNumbers = rgbToHex(rgbNumbers);
+        return rgbColor;
+    });
+    console.log (currentArray);
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// checkButton.addEventListener("click", () => {
-//     // Guardar la combinación seleccionada
-//     let selectedCombination = currentArray.slice();
-//     console.log(selectedCombination);
-
-//     // Deshabilitar el botón de borrar y el botón de check
-//     deleteButton.disabled = true;
-//     checkButton.disabled = true;
-//   });
-
-// }
-// createRows(selectedLevel);
-
-
-// // Capture colors in an array
-// const rgbToHex = (rgb) => {
-// let rgbArray = rgb.split(',').map(Number);
-// let hexArray = rgbArray.map((value) => {
-//   let hex = value.toString(16);
-//   return hex.length === 1 ?
-//     '0' + hex :
-//     hex;
-// });
-// return '#' + hexArray.join('');
-// };
-
-// let currentArray = [];
-
-// const captureColors = () => {
-// currentArray = [];
-// currentArray = clicablearray.map((e) => {
-//   let rgbColor = e.style.backgroundColor;
-//   let rgbNumbers = rgbColor.slice(4, -1);
-//   let hexNumbers = rgbToHex(rgbNumbers);
-//   return hexNumbers;
-// });
-// };
-
-// // Unblock rows
-// const unblockRows = () => {
-// rowContador++;
-// clicablearray = Array.from(document.getElementsByClassName(`rowMom-${rowContador}`));
-// clicablearray.forEach((clicable) => {
-//   clicable.addEventListener('click', () => pintarBolas(clicable));
-// });
-// }
-
+// unblocking rows
+        
+const unblockRows = ()=>{
+    console.log (currentArray);
+    if (currentArray.every((element) => element !== "")) {
+        rowContador++
+        console.log (rowContador);
+        clicablearray = Array.from(document.getElementsByClassName(`mirow-${rowContador}`));
+        clicablearray.forEach((clicable)=> {
+        clicable.addEventListener('click',() => pintarBolas(clicable));
+    });
+    }
+}
