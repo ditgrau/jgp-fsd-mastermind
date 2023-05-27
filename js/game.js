@@ -1,67 +1,58 @@
 
+//session
+let selectedColors = JSON.parse(sessionStorage.getItem('newColors')); // mi array de colores del session
+let selectedLevel = sessionStorage.getItem('level');
 
-//level board // chosen colors
-
+//dom
+let gameBoard = document.getElementById("gameBoard");
 let divSelectedColors = document.getElementById('levelBoard');
-let selectedColors = JSON.parse(sessionStorage.getItem('newColors'));
+let divInsightColors = document.getElementById('insightCombo');
+let dismissBtn = document.getElementById('dismissBtn');
+let checkBtn = document.getElementById('checkBtn');
 
-const createLevelBoard = () => {
-    for (let i = 0; i < selectedColors.length; i++) {
-        let clonedSelector = document.createElement("div");
-        clonedSelector.classList.add('circleColorBoard');
-        clonedSelector.style.backgroundColor = selectedColors[i];
-        divSelectedColors.appendChild(clonedSelector); 
-    }
-}
-createLevelBoard();
-
-
-// secret combination
-
+//variables 
 let secretCombo = [];
 
+// create secret and random combination
 const colorsRandom = () => {
-    for (let i = 0; i < 4; i++) {
-        let randomIndex = Math.floor(Math.random() * selectedColors.length);
-        secretCombo.push(selectedColors[randomIndex]);
+for (let i = 0; i < 4; i++) {
+    let randomIndex = Math.floor(Math.random() * selectedColors.length);
+    secretCombo.push(selectedColors[randomIndex]);
     }
 }
 colorsRandom();
 
-
-//  secret board - contains the secret combination
-
-let divInsightColors = document.getElementById('insightCombo');
-
+// secret board - contains the secret combination /////////////////// TENGO QUE OCULTARLA CLASS 'HIDEN'
 const createInsightBoard = () => {
     for (let i = 0; i < 4; i++) {
         let insightBubble = document.createElement("div");
         insightBubble.classList.add('circleColorBoard');
         insightBubble.style.backgroundColor = secretCombo[i];
-        // clonedSelector[i].addEventListener('click', clickSelector());
-        divInsightColors.appendChild(insightBubble); 
+        divInsightColors.appendChild(insightBubble);
     }
-} 
+}
 createInsightBoard();
 
+// level board - with chosen colors
+const createLevelBoard = () => {
+    for (let i = 0; i < selectedColors.length; i++) {
+        let clonedSelector = document.createElement("div");
+        clonedSelector.classList.add('circleColorBoard');
+        clonedSelector.style.backgroundColor = selectedColors[i];
+        divSelectedColors.appendChild(clonedSelector);
+    }
+}
+createLevelBoard();
 
-// GAMEBOARD 
-
-let selectedLevel = sessionStorage.getItem('level');
-let gameBoard = document.getElementById ("gameBoard");
-
-// Create rows // cells // snitches
+// Create gameboard from chosen level
 
 const createRows = (numberRows) => {
-
     for (let i = 0; i < numberRows; i++) {
-
         let rowsGameboard = document.createElement("div");
         rowsGameboard.classList.add("row");
         rowsGameboard.id = `rowGameboard-${i}`;
         gameBoard.appendChild(rowsGameboard);
-
-
+        
         let snitchDiv = document.createElement("div");
         snitchDiv.classList.add("grid");
         rowsGameboard.appendChild(snitchDiv);
@@ -73,17 +64,23 @@ const createRows = (numberRows) => {
         }
 
         for (let j = 0; j < 4; j++) {
-                let cellsrow = document.createElement("div");
-                cellsrow.classList.add("circleColorBoard");
-                rowsGameboard.appendChild(cellsrow);
-                cellsrow.id = `cell-${j}-row-${i}`;
-                cellsrow.classList.add (`mirow-${i}`)
-            }
+            let cellsrow = document.createElement("div");
+            cellsrow.classList.add("circleColorBoard");
+            rowsGameboard.appendChild(cellsrow);
+            cellsrow.id = `cell-${j}-row-${i}`;
+            cellsrow.classList.add (`mirow-${i}`)
+        }
     }
 }
 createRows (selectedLevel);
 
+// dismiss btn - ////////////////////////////////////// REVISAR SI FUNCIONA BIEN!
 
+dismissBtn.addEventListener("click", () => {
+    clicablearray.forEach((clicable) => {
+    clicable.style.backgroundColor = "";
+    });
+});
 
 // Paint the cells of each row
 
@@ -104,70 +101,69 @@ const pintarBolas = (clicable) => {
 clicablearray.forEach((clicable)=> {
             clicable.addEventListener('click',() => pintarBolas(clicable));
         });
-console.log(rowContador);
-
-// clicks of the check button
-
-        // capture colours in an array
-
-
-const rgbToHex = (rgb) => {
-    let rgbArray = rgb.split(',').map(Number);
-    let hexArray = rgbArray.map((value) => {
-    let hex = value.toString(16);
-        return hex.length === 1 
-        ? '0' + hex 
-        : hex;
-        });
-    return '#' + hexArray.join('');
-};
-
-const captureColors = () => {
-    currentArray = clicablearray.map((e) => {
-        let rgbColor = e.style.backgroundColor;
-        let rgbNumbers = rgbColor.slice(4, 17);
-        let hexNumbers = rgbToHex(rgbNumbers);
-        return hexNumbers;
-        });
-    console.log (currentArray);
-};
-
-
-
-
-    // unblocking rows
-
-const unblockRows = ()=>{
-    console.log (clicablearray);
-    rowContador++
-    console.log (rowContador);
-    clicablearray = Array.from(document.getElementsByClassName(`mirow-${rowContador}`));
-    clicablearray.forEach((clicable)=> {
-        clicable.addEventListener('click',() => pintarBolas(clicable));
-    });
-}
 
 
 
 
 
-// // check button and delete
-
-// let checkButton = document.getElementById('checkButton');
-// let dismissButton = document.getElementById('dismissButton');
 
 
 
-// function tienenElementoComun(array1, array2) {
-//     return array1.some(elemento => array2.includes(elemento));
-//   }
-  
-//   // Ejemplo de uso
-//   const array1 = [1, 2, 3, 4];
-//   const array2 = [5, 6, 3, 8];
-  
-//   if (tienenElementoComun(array1, array2)) {
-//     console.log("Los arrays tienen al menos un elemento en común.");
-//   } else {
-//     console.log("Los arrays no tienen elementos en común.");
-//   }
+
+
+
+
+
+
+
+
+
+
+
+// checkButton.addEventListener("click", () => {
+//     // Guardar la combinación seleccionada
+//     let selectedCombination = currentArray.slice();
+//     console.log(selectedCombination);
+
+//     // Deshabilitar el botón de borrar y el botón de check
+//     deleteButton.disabled = true;
+//     checkButton.disabled = true;
+//   });
+
+// }
+// createRows(selectedLevel);
+
+
+// // Capture colors in an array
+// const rgbToHex = (rgb) => {
+// let rgbArray = rgb.split(',').map(Number);
+// let hexArray = rgbArray.map((value) => {
+//   let hex = value.toString(16);
+//   return hex.length === 1 ?
+//     '0' + hex :
+//     hex;
+// });
+// return '#' + hexArray.join('');
+// };
+
+// let currentArray = [];
+
+// const captureColors = () => {
+// currentArray = [];
+// currentArray = clicablearray.map((e) => {
+//   let rgbColor = e.style.backgroundColor;
+//   let rgbNumbers = rgbColor.slice(4, -1);
+//   let hexNumbers = rgbToHex(rgbNumbers);
+//   return hexNumbers;
+// });
+// };
+
+// // Unblock rows
+// const unblockRows = () => {
+// rowContador++;
+// clicablearray = Array.from(document.getElementsByClassName(`rowMom-${rowContador}`));
+// clicablearray.forEach((clicable) => {
+//   clicable.addEventListener('click', () => pintarBolas(clicable));
+// });
+// }
+
