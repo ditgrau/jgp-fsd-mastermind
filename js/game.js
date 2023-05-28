@@ -179,18 +179,14 @@ const snitchesBoard = () => {
     let colorBn = colorSnitches[i];
     snitches.style.backgroundColor = colorBn;
     }
+   console.log (colorSnitches);
 };
-
+console.log (colorSnitches);
 snitchesBoard();
 };
-
+console.log (colorSnitches);
 firstMatch();
 
-
-// const unblockSnitches = ()=>{
-//         console.log (rowContador);
-//         clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
-//         clicableArray.forEach((clicable)=> {
-//         clicable.addEventListener('click',() => paintBalls(clicable));
-//     });
-//     }
+// if (colorSnitches === ["#000000", "#000000", "#000000", "#000000"]) {
+//     window.location.href = "final.html";
+// }

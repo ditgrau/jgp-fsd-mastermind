@@ -21,6 +21,7 @@
     --color-pathGit: #eaff00;
     --color-userGit: #11b97b;
     --color-osGit: #ef73ff;
+    --color-break: #b163db;
     --color-branchGit: #00a4da;
 }
 
@@ -193,6 +194,11 @@ input[type="color"] {
 .branchGit {
     color: var(--color-branchGit);
 }
+
+.break {
+    color: var(--color-break);
+}
+
 
 /* gameboard */
 
