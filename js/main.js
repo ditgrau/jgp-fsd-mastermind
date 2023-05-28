@@ -28,7 +28,6 @@ const checkForGame = (data) => {
         mmtypewriter("<-- Rellena todos los colores -->", 90, comment4);
         mmtypewriter("<-- Rellena todos los colores -->", 90, comment5);
         mmtypewriter("<-- Rellena todos los colores -->", 90, comment6);
-        console.log ("a tu casa");
     }
 }
 
@@ -183,13 +182,6 @@ mmtypewriter("<-- Juego creado por Judit Grau -->", 90, comment1)
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-// tendria que mapear el array del color picker y que haga esta funcion, pero deberia estar implicita en la funcion del loop (?)
-//
-// });
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 // ahora quiero que se desactive el colorpicker una vez haya cambiado de estado, para que no me entren ams datos en el array
 
@@ -259,23 +251,6 @@ mmtypewriter("<-- Juego creado por Judit Grau -->", 90, comment1)
 // console.log(array); // Resultado: ["Valor asignado", null, null]
 
 
-
-
-
-
-                // esto es HTML collection, en consola pone Node 
-                // let colorsInputEasy = document.getElementsByName("pickerEasy");
-                // let colorsInputMedium = document.getElementsByName("pickerMedium");
-                // let colorsInputDif = document.getElementsByName("pickerDif");
-
-                // lo convierto en array
-                // let arrayColorsEasy = Array.from(colorsInputEasy);
-                // let arrayColorsMedium = Array.from(colorsInputMedium);
-                // let arrayColorsDif = Array.from(colorsInputDif);
-
-// convierto en array las empty bubbles, juntando los dos pasos anteriores
-
-
 // bucle for que recorre el array
 // for (let i = 0; i < arrayDefaultColors.length; i++) {
 //     arrayDefaultColors [i].oninput = () => { // cada vez que un elemento del array tenga un cambio .oninput :
@@ -284,25 +259,6 @@ mmtypewriter("<-- Juego creado por Judit Grau -->", 90, comment1)
 //     console.log(arrayNewColors);
 //     };
 // } 
-
-
-
-//  esta es la funcion para el bucle que almacena los colores en un array, AQUI LA HE DEFINIDO, AHORA LA TENGO QUE INVOCAR CON ARRAYS
-
-
-
-
-
-
-
-// el array con los colores de partida
-// let colorsito = document.getElementsByName("head");
-// let arrayColorsito = Array.from(colorsito);
-// arrayColorsito.map (head =>{
-//     console.log (head.value);
-
-// })
-
 
 // console.log (arrayColorsito);
 // console.log (colorsito);

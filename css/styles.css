@@ -266,8 +266,6 @@ input[type="color"] {
     .supertitle {
         font-size: 4em;
     }
-
-
 }
 
 @media (max-width:770px) {
@@ -281,5 +279,34 @@ input[type="color"] {
         font-size: 2em;
     }
 
+    .circleColorBoard {
+        height: 2.3rem;
+        width: 2.3rem;
+        border-radius: 50%;
+        border: solid var(--color-third) 0.1rem;
+        background-color: rgb(26, 26, 26);
+        margin: 0.15rem;
+        padding: 0.15rem;
+    }
+    
+    .circleGrid {
+        height: 0.8rem;
+        width: 0.8rem;
+        border-radius: 50%;
+        border: solid rgb(82, 82, 82) 0.08rem;
+        background-color: rgb(26, 26, 26);
+        justify-content: center;
+        align-items: center;
+    }
+    .grid {
+        margin: 0.15rem;
+        padding: 0;
+        height: 2.3rem;
+        width: 2.3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+    }
 }
 

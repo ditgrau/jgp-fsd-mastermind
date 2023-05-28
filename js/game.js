@@ -22,7 +22,7 @@ for (let i = 0; i < 4; i++) {
     }
 }
 colorsRandom();
-console.log (colorsRandom);
+console.log (secretCombo);
 
 // secret board - contains the secret combination /////////////////// TENGO QUE OCULTARLA CLASS 'HIDEN'
 const createInsightBoard = () => {
@@ -45,6 +45,7 @@ const createLevelBoard = () => {
     }
 }
 createLevelBoard();
+
 
 // Create gameboard from chosen level
 
@@ -125,6 +126,7 @@ const captureColors = () => {
         return rgbColor;
     });
     console.log (currentArray);
+    compareArray();
 };
 
 // unblocking rows
@@ -140,3 +142,14 @@ const unblockRows = ()=>{
     });
     }
 }
+
+let divsForArray = Array.from(divSelectedColors.querySelectorAll('.circleColorBoard'));
+
+const compareArray = () => {
+    captureRandom = divsForArray.map((div) => {
+        let rgbRandom = div.style.backgroundColor;
+        return rgbRandom;
+    });
+    console.log (captureRandom);
+};
+
