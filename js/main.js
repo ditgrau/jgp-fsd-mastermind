@@ -1,6 +1,30 @@
 // Funcion para el logo, no queria meterlo en el html para que no se me moviese el diseño
 const game = () => {
-    window.location.href = "./game.html";
+    let level = localStorage.getItem('level');
+
+    switch (level) {
+        case 10:
+            checkForGame(4);
+            break;
+        case 8:
+            checkForGame(5);
+            break;
+        case 6:
+            checkForGame(6);
+            break;
+        default:
+            console.log('no pasar');
+            break;
+    }
+};
+
+const checkForGame = (data) => {
+    let saveArray = localStorage.getItem('newColors');
+    if (saveArray.length === data) {
+        window.location.href = "./game.html";
+    }else {
+        console.log ('no vale');
+    }
 }
 
 const comeBackHome = () => {
@@ -87,7 +111,6 @@ for (let i = 0; i < arrayLevel.length; i++) {
 
 return arrayNewColors;
 }
-
     
 loopGetColors(arrayColorsEasy, emptyBubblesEasy);
 loopGetColors(arrayColorsMedium, emptyBubblesMedium);
