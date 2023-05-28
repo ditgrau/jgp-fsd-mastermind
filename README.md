@@ -28,8 +28,8 @@ El proyecto ha sido desarrollado y diseñado en su totalidad por mí, utilizando
 ##### ⚙️ Dificultades encontradas.
 A pesar de que este proyecto ha sido un desafío tanto a nivel técnico como psicológico, el resultado es satisfactorio. Sin embargo, he enfrentado dificultades significativas, siendo las siguientes las más destacadas:
 
-🔸 El color picker presentó desafíos debido a la obtención de los datos en formato hexadecimal y la dificultad para encontrar una forma de realizar las comparaciones en formato RGB.
-🔸 La funcionalidad de las comparaciones de los arrays para determinar la cantidad exacta de bolas blancas y negras también fue complicada.
+🔸 El color picker presentó desafíos debido a la obtención de los datos en formato hexadecimal y la dificultad para encontrar una forma de realizar las comparaciones en formato RGB.<br>
+🔸 La funcionalidad de las comparaciones de los arrays para determinar la cantidad exacta de bolas blancas y negras también fue complicada.<br>
 🔸 Y, en general, traducir mis ideas al lenguaje JavaScript con mis limitados conocimientos y experiencia ha sido un desafío.<br>
 A través de este proyecto, he adquirido una gran cantidad de aprendizajes, siendo el primero darme cuenta de que soy más persuasiva de lo que creía.
 
