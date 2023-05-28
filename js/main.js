@@ -1,29 +1,32 @@
 // Funcion para el logo, no queria meterlo en el html para que no se me moviese el diseño
 const game = () => {
-    let level = localStorage.getItem('level');
-
-    switch (level) {
-        case 10:
+let selectedLevel = sessionStorage.getItem('level');
+console.log ('este es el nivel seleccionado' + selectedLevel);
+    
+    console.log (selectedLevel);
+    switch (selectedLevel) {
+        case '10':
             checkForGame(4);
             break;
-        case 8:
+        case '8':
             checkForGame(5);
             break;
-        case 6:
+        case '6':
             checkForGame(6);
             break;
         default:
-            mmtypewriter("<-- Rellena todos los colores -->", 110, comment4);
             break;
     }
 };
 // no funciona con el nivel 1
 
 const checkForGame = (data) => {
-    let saveArray = localStorage.getItem('newColors');
-    if (saveArray.length === data) {
+    let saveArray = JSON.parse(sessionStorage.getItem('newColors')); 
+    if (saveArray && saveArray.length === data) {
         window.location.href = "./game.html";
-    }else {}
+    }else {
+        mmtypewriter("<-- Rellena todos los colores -->", 90, comment4);
+    }
 }
 
 const comeBackHome = () => {

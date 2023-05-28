@@ -2,6 +2,7 @@
 //session
 let selectedColors = JSON.parse(sessionStorage.getItem('newColors')); // mi array de colores del session
 let selectedLevel = sessionStorage.getItem('level');
+console.log ('este es el nivel seleccionado' + selectedLevel);
 
 //dom
 let gameBoard = document.getElementById("gameBoard");
