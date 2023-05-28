@@ -81,7 +81,8 @@ body {
     border-color: var(--color-third);
 }
 
-.mm-button:hover, .keypad:hover {
+.mm-button:hover,
+.keypad:hover {
     background-color: var(--color-second);
     border: 1px solid transparent;
 }
@@ -203,7 +204,7 @@ input[type="color"] {
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
-    border: solid var(--color-third)  0.1rem;
+    border: solid var(--color-third) 0.1rem;
     background-color: rgb(26, 26, 26);
     margin: 0.3rem;
     padding: 0.3rem;
@@ -224,7 +225,7 @@ input[type="color"] {
     padding: 0;
     height: 3rem;
     width: 3rem;
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
@@ -246,7 +247,7 @@ input[type="color"] {
 
 .keypad {
     border-radius: 0.5rem;
-    border: solid var(--color-third)  0.1rem;
+    border: solid var(--color-third) 0.1rem;
     background-color: rgb(29, 29, 29);
     margin: 0.3rem;
     padding: 0.3rem;
@@ -265,6 +266,8 @@ input[type="color"] {
     .supertitle {
         font-size: 4em;
     }
+
+
 }
 
 @media (max-width:770px) {
@@ -277,4 +280,6 @@ input[type="color"] {
     .supertitle {
         font-size: 2em;
     }
+
 }
+

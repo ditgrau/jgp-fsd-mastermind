@@ -26,6 +26,9 @@ const checkForGame = (data) => {
         window.location.href = "./game.html";
     }else {
         mmtypewriter("<-- Rellena todos los colores -->", 90, comment4);
+        mmtypewriter("<-- Rellena todos los colores -->", 90, comment5);
+        mmtypewriter("<-- Rellena todos los colores -->", 90, comment6);
+        console.log ("a tu casa");
     }
 }
 
@@ -125,6 +128,8 @@ const comment1 = document.getElementById("first-comment");
 const comment2 = document.getElementById("second-comment");
 const comment3 = document.getElementById("third-comment");
 const comment4 = document.getElementById("fourth-comment");
+const comment5 = document.getElementById("fifth-comment");
+const comment6 = document.getElementById("sixth-comment");
 
 
 
@@ -141,7 +146,7 @@ const mmtypewriter = (comment, time, div)=>{
     }, time)
 }
 
-mmtypewriter("<-- Juego creado por Judit Grau -->", 100, comment1)
+mmtypewriter("<-- Juego creado por Judit Grau -->", 90, comment1)
 
 
 
