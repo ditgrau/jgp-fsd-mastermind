@@ -13,18 +13,17 @@ const game = () => {
             checkForGame(6);
             break;
         default:
-            console.log('no pasar');
+            mmtypewriter("<-- Rellena todos los colores -->", 110, comment4);
             break;
     }
 };
+// no funciona con el nivel 1
 
 const checkForGame = (data) => {
     let saveArray = localStorage.getItem('newColors');
     if (saveArray.length === data) {
         window.location.href = "./game.html";
-    }else {
-        console.log ('no vale');
-    }
+    }else {}
 }
 
 const comeBackHome = () => {
@@ -122,6 +121,7 @@ loopGetColors(arrayColorsDif, emptyBubblesDif);
 const comment1 = document.getElementById("first-comment");
 const comment2 = document.getElementById("second-comment");
 const comment3 = document.getElementById("third-comment");
+const comment4 = document.getElementById("fourth-comment");
 
 
 
