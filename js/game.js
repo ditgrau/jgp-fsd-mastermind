@@ -24,7 +24,7 @@ for (let i = 0; i < 4; i++) {
 colorsRandom();
 console.log (secretCombo);
 
-// secret board - contains the secret combination /////////////////// TENGO QUE OCULTARLA CLASS 'HIDEN'
+// secret board - contains the secret combination /////////////////// TENGO QUE OCULTARLA CLASS 'HIDdEN'
 const createInsightBoard = () => {
     for (let i = 0; i < 4; i++) {
         let insightBubble = document.createElement("div");
@@ -64,23 +64,23 @@ const createRows = (numberRows) => {
             let snitch = document.createElement("div");
             snitch.classList.add("circleGrid");
             snitchDiv.appendChild(snitch);
+            snitch.classList.add(`snitches-${i}`);
         }
 
         for (let j = 0; j < 4; j++) {
             let cellsrow = document.createElement("div");
             cellsrow.classList.add("circleColorBoard");
             rowsGameboard.appendChild(cellsrow);
-            cellsrow.id = `cell-${j}-row-${i}`;
-            cellsrow.classList.add (`mirow-${i}`)
+            cellsrow.classList.add (`eachRow-${i}`)
         }
     }
 }
 createRows (selectedLevel);
 
-// dismiss btn - ////////////////////////////////////// REVISAR SI FUNCIONA BIEN!
+// dismiss btn //
 
 dismissBtn.addEventListener("click", () => {
-    clicablearray.forEach((clicable) => {
+    clicableArray.forEach((clicable) => {
     clicable.style.backgroundColor = "";
     });
 });
@@ -91,10 +91,11 @@ dismissBtn.addEventListener("click", () => {
 
 let numeroClics = 0;
 let rowContador = 0;
-let clicablearray = Array.from(document.getElementsByClassName(`mirow-${rowContador}`));
+let clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
+let snitchesArray = Array.from(document.getElementsByClassName(`snitches-${rowContador}`));
 
 
-const pintarBolas = (clicable) => {
+const paintBalls = (clicable) => {
     console.log("clic en el botón");
     if (numeroClics<selectedColors.length) {
         clicable.style.backgroundColor = selectedColors[numeroClics];
@@ -103,26 +104,13 @@ const pintarBolas = (clicable) => {
         numeroClics = 0;
     }
 }
-clicablearray.forEach((clicable)=> {
-clicable.addEventListener('click',() => pintarBolas(clicable));
+clicableArray.forEach((clicable)=> {
+clicable.addEventListener('click',() => paintBalls(clicable));
 });
 
-        // const rgbToHex = (rgb) => {
-        //     let rgbArray = rgb.split(',').map(Number);
-        //     let hexArray = rgbArray.map((value) => {
-        //     let hex = value.toString(16);
-        //         return hex.length === 1 
-        //         ? '0' + hex 
-        //         : hex;
-        //         });
-        //     return '#' + hexArray.join('');
-        // };
-        
 const captureColors = () => {
-    currentArray = clicablearray.map((e) => {
+    currentArray = clicableArray.map((e) => {
         let rgbColor = e.style.backgroundColor;
-        // let rgbNumbers = rgbColor.slice(4, 17);
-        // let hexNumbers = rgbToHex(rgbNumbers);
         return rgbColor;
     });
     console.log (currentArray);
@@ -130,15 +118,15 @@ const captureColors = () => {
 };
 
 // unblocking rows
-        
+
 const unblockRows = ()=>{
     console.log (currentArray);
     if (currentArray.every((element) => element !== "")) {
         rowContador++
         console.log (rowContador);
-        clicablearray = Array.from(document.getElementsByClassName(`mirow-${rowContador}`));
-        clicablearray.forEach((clicable)=> {
-        clicable.addEventListener('click',() => pintarBolas(clicable));
+        clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
+        clicableArray.forEach((clicable)=> {
+        clicable.addEventListener('click',() => paintBalls(clicable));
     });
     }
 }
@@ -151,7 +139,6 @@ const compareArray = () => {
         return rgbRandom;
     });
     console.log (captureRandom);
-    // firstMatch ();
 };
 
 // const firstMatch = () => {
@@ -180,19 +167,31 @@ const firstMatch = () => {
     console.log (captureRandom);
     console.log (currentArray);
 
+    let blackWhiteElements = [];
     let commonElements = [];
+
     for (let i = 0; i < 5; i++) {
     if (currentArray.includes(captureRandom[i]) && !commonElements.includes(captureRandom[i])) {
-        commonElements.push(captureRandom[i]);
         if (captureRandom[i] === currentArray[i]) {
-            console.log ('bola negra')
+            blackWhiteElements.push('#FF0000');
         }else {
-    
+            blackWhiteElements.push('#FFFFFF');
         }
         }
+        console.log (blackWhiteElements);
     }
-    let whiteballs = commonElements.length;
-    console.log (whiteballs);
-    return whiteballs;
+
+    // let getWhite = whiteElements.length - blackElements.length;
+    // let blackWhite = blackElements.concat(getWhite);
+    // console.log (blackWhite);
+    // return blackWhite
 }
 console.log (firstMatch());
+
+// const unblockSnitches = ()=>{
+//         console.log (rowContador);
+//         clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
+//         clicableArray.forEach((clicable)=> {
+//         clicable.addEventListener('click',() => paintBalls(clicable));
+//     });
+//     }
