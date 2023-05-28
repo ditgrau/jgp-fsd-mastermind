@@ -123,6 +123,7 @@ const unblockRows = ()=>{
         rowContador++
         console.log (rowContador);
         clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
+        snitchesArray = Array.from(document.getElementsByClassName(`snitches-${rowContador-1}`));
         clicableArray.forEach((clicable)=> {
         clicable.addEventListener('click',() => paintBalls(clicable));
     });
