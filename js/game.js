@@ -143,7 +143,7 @@ const unblockRows = ()=>{
     }
 }
 
-let divsForArray = Array.from(divSelectedColors.querySelectorAll('.circleColorBoard'));
+let divsForArray = Array.from(divInsightColors.querySelectorAll('.circleColorBoard'));
 
 const compareArray = () => {
     captureRandom = divsForArray.map((div) => {
@@ -151,5 +151,22 @@ const compareArray = () => {
         return rgbRandom;
     });
     console.log (captureRandom);
+    firstMatch ();
 };
 
+const firstMatch = () => {
+
+    console.log (captureRandom);
+    console.log (currentArray);
+
+    let commonElements = [];
+    for (let i = 0; i < 5; i++) {
+    if (currentArray.includes(captureRandom[i]) && !commonElements.includes(captureRandom[i])) {
+        commonElements.push(captureRandom[i]);
+        }
+    }
+    let whiteballs = commonElements.length;
+    console.log (whiteballs);
+    return whiteballs;
+}
+console.log (firstMatch());
