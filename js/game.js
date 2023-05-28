@@ -113,14 +113,12 @@ const captureColors = () => {
         let rgbColor = e.style.backgroundColor;
         return rgbColor;
     });
-    console.log (currentArray);
     compareArray();
 };
 
 // unblocking rows
 
 const unblockRows = ()=>{
-    console.log (currentArray);
     if (currentArray.every((element) => element !== "")) {
         rowContador++
         console.log (rowContador);
@@ -138,55 +136,160 @@ const compareArray = () => {
         let rgbRandom = div.style.backgroundColor;
         return rgbRandom;
     });
-    console.log (captureRandom);
 };
+
+
+// incluyendo posicion
+
+
+
+
+
 
 // const firstMatch = () => {
 
 //     console.log (captureRandom);
 //     console.log (currentArray);
 
+//     let blackWhiteElements = [];
 //     let commonElements = [];
+
 //     for (let i = 0; i < 5; i++) {
 //     if (currentArray.includes(captureRandom[i]) && !commonElements.includes(captureRandom[i])) {
-//         commonElements.push(captureRandom[i]);
+//         if (captureRandom[i] === currentArray[i]) {
+//             blackWhiteElements.push('#FF0000');
+//         }else {
+//             blackWhiteElements.push('#FFFFFF');
 //         }
+//         }
+//         console.log (blackWhiteElements);
 //     }
-//     let whiteballs = commonElements.length;
-//     console.log (whiteballs);
-//     return whiteballs;
-// }
-// console.log (firstMatch());
 
 
 
-// incluyendo posicion
 
-const firstMatch = () => {
 
-    console.log (captureRandom);
-    console.log (currentArray);
 
-    let blackWhiteElements = [];
-    let commonElements = [];
+    // const firstMatch = () => {
 
-    for (let i = 0; i < 5; i++) {
-    if (currentArray.includes(captureRandom[i]) && !commonElements.includes(captureRandom[i])) {
-        if (captureRandom[i] === currentArray[i]) {
-            blackWhiteElements.push('#FF0000');
-        }else {
+    //     console.log (captureRandom);
+    //     console.log (currentArray);
+    
+    //     let blackWhiteElements = [];
+    //     let commonElements = [];
+    
+    //     for (let i = 0; i < 5; i++) {
+    //     if (currentArray.includes(captureRandom[i]) && (captureRandom[i] === currentArray[i])) {
+    //         commonElements.push(captureRandom[i]);
+    //         blackWhiteElements.push('#FFFFFF');
+    //         }else if (currentArray.includes(captureRandom[i]) && !commonElements.includes(captureRandom[i])) {
+    //             blackWhiteElements.push('#FF0000');
+    //         }
+    //         }
+    //         console.log (blackWhiteElements);
+    //     }
+    
+        
+
+
+    // const firstMatch = () => {
+
+    //     console.log (captureRandom);
+    //     console.log (currentArray);
+    
+    //     let blackWhiteElements = [];
+    //     let commonElements = [];
+    
+    //     for (let i = 0; i < 5; i++) {
+    //     if (currentArray.includes(captureRandom[i]) && (captureRandom[i] === currentArray[i])) {
+    //         currentArray[i] = null;
+    //         blackWhiteElements.push('#FFFFFF');
+    //         }else if (currentArray.includes(captureRandom[i])) {
+    //             blackWhiteElements.push('#FF0000');
+    //         }
+    //         }
+    //         console.log (blackWhiteElements);
+    //     }
+    
+    // console.log (firstMatch());
+
+
+    // const firstMatch = () => {
+    //     let blackWhiteElements = [];
+    //     let newCurrent = currentArray.slice();
+    //     let newCapture = captureRandom.slice();
+
+    //     for (let i = 0; i < newCapture.length; i++) {
+    //     if (newCapture.includes(newCurrent[i]) && (newCurrent[i] === newCapture[i])) {
+    //         blackWhiteElements.push('#FFFFFF');
+    //         newCurrent[i] = null;
+    //         newCapture[i] = null;
+    //         console.log (newCurrent);
+    //         console.log (newCapture);
+         
+    //         }else if (newCapture.includes(newCurrent[i])) {
+    //         blackWhiteElements.push('#FF0000');
+    //         newCurrent[i] = null;
+    //         console.log (newCurrent);
+    //         console.log (newCapture);
+            
+    //         }
+    //     }
+    //     console.log(blackWhiteElements);
+    //     }
+
+    //     firstMatch();
+
+
+    const firstMatch = () => {
+        let blackWhiteElements = [];
+        let newCurrent = currentArray.slice();
+        let newCapture = captureRandom.slice();
+
+        for (let i = 0; i < 4; i++) {
+        if (newCapture.includes(newCurrent[i]) && newCurrent[i] === newCapture[i]) {
+            newCurrent[i] = null;
+            newCapture[i] = null;
             blackWhiteElements.push('#FFFFFF');
+            console.log(newCurrent);
+            console.log(newCapture);
+            }
+        }
+
+        for (let j = 0; j < 4; j++) {
+        if (newCapture.includes(newCurrent[j]) && newCurrent[j] !== null) {
+            const index = newCapture.indexOf(newCurrent[j]);
+            if (index > -1) {
+            newCapture[index] = null;
+            }
+            blackWhiteElements.push('#FF0000');
+            newCurrent[j] = null;
+            console.log(newCurrent);
+            console.log(newCapture);
         }
         }
-        console.log (blackWhiteElements);
+
+        console.log(blackWhiteElements);
     }
+
+    firstMatch();
+
+
+
+
+
+
+
+
+
+
+    
 
     // let getWhite = whiteElements.length - blackElements.length;
     // let blackWhite = blackElements.concat(getWhite);
     // console.log (blackWhite);
     // return blackWhite
-}
-console.log (firstMatch());
+
 
 // const unblockSnitches = ()=>{
 //         console.log (rowContador);
