@@ -151,8 +151,29 @@ const compareArray = () => {
         return rgbRandom;
     });
     console.log (captureRandom);
-    firstMatch ();
+    // firstMatch ();
 };
+
+// const firstMatch = () => {
+
+//     console.log (captureRandom);
+//     console.log (currentArray);
+
+//     let commonElements = [];
+//     for (let i = 0; i < 5; i++) {
+//     if (currentArray.includes(captureRandom[i]) && !commonElements.includes(captureRandom[i])) {
+//         commonElements.push(captureRandom[i]);
+//         }
+//     }
+//     let whiteballs = commonElements.length;
+//     console.log (whiteballs);
+//     return whiteballs;
+// }
+// console.log (firstMatch());
+
+
+
+// incluyendo posicion
 
 const firstMatch = () => {
 
@@ -163,6 +184,11 @@ const firstMatch = () => {
     for (let i = 0; i < 5; i++) {
     if (currentArray.includes(captureRandom[i]) && !commonElements.includes(captureRandom[i])) {
         commonElements.push(captureRandom[i]);
+        if (captureRandom[i] === currentArray[i]) {
+            console.log ('bola negra')
+        }else {
+    
+        }
         }
     }
     let whiteballs = commonElements.length;
