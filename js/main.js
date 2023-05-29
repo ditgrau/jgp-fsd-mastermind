@@ -1,5 +1,7 @@
 // Funcion para el logo, no queria meterlo en el html para que no se me moviese el diseño
 const game = () => {
+
+// funcion para comprobar que se han rellenado todos los pickers
 let selectedLevel = sessionStorage.getItem('level');
 console.log ('este es el nivel seleccionado' + selectedLevel);
     
@@ -18,7 +20,6 @@ console.log ('este es el nivel seleccionado' + selectedLevel);
             break;
     }
 };
-// no funciona con el nivel 1
 
 const checkForGame = (data) => {
     let saveArray = JSON.parse(sessionStorage.getItem('newColors')); 
@@ -31,18 +32,17 @@ const checkForGame = (data) => {
     }
 }
 
+// funcion de retorno a la home
 const comeBackHome = () => {
     window.location.href = "../index.html";
 }
 
 // session storage // recoger el nivel
-
 const saveLevel = (levelRows) => {
     sessionStorage.setItem('level', levelRows);
 }
 
 // session storage // recoger el nombre usuario
-
 const saveName = () => {  
     let userPlayer = document.getElementById("userName").value; 
     if (userPlayer.length!==0){
@@ -54,14 +54,12 @@ const saveName = () => {
 }
 
 //Función para cambiar la Navbar de la pagina de nivel"
-
 const changeNavbarLevel = () => {
     document.getElementById("nb-player").style.display = "none";
     document.getElementById("nb-level").style.display = "block";
 };
 
 // Funciones onclick para cambiar a la pantalla de elegir colores segun nivel //
-
 const bubbles4 = () => {
     document.getElementById("mm-levels").style.display = "none";
     document.getElementById("mm-levelOneBubbles").classList.remove("mm-hidden");
@@ -83,14 +81,12 @@ const bubbles6 = () => {
     saveLevel(6);
 }
 
-// funcion consola Git
-
-const gitConsole = ()=> {
-    document.getElementById("gitText").classList.remove("mm-hidden");
-}
+// // funcion consola Git
+// const gitConsole = ()=> {
+//     document.getElementById("gitText").classList.remove("mm-hidden");
+// }
 
 // Color-picker y arrays // deberia haber hecho un mapeo (?) mirarlo...
-
 let arrayColorsEasy = Array.from(document.getElementsByName("pickerEasy"));
 let arrayColorsMedium = Array.from(document.getElementsByName("pickerMedium"));
 let arrayColorsDif = Array.from(document.getElementsByName("pickerDif"));
