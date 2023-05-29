@@ -1,16 +1,19 @@
 
 //session
-let selectedColors = JSON.parse(sessionStorage.getItem('newColors')); // mi array de colores del session
+let selectedColors = JSON.parse(sessionStorage.getItem('newColors')); 
 let selectedLevel = sessionStorage.getItem('level');
 console.log ('este es el nivel seleccionado' + selectedLevel);
+
 //dom
 let gameBoard = document.getElementById("gameBoard");
 let divSelectedColors = document.getElementById('levelBoard');
 let divInsightColors = document.getElementById('insightCombo');
 let dismissBtn = document.getElementById('dismissBtn');
 let checkBtn = document.getElementById('checkBtn');
+
 //variables 
 let secretCombo = [];
+
 // create secret and random combination
 const colorsRandom = () => {
 for (let i = 0; i < 4; i++) {
@@ -20,7 +23,8 @@ for (let i = 0; i < 4; i++) {
 }
 colorsRandom();
 console.log (secretCombo);
-// secret board - contains the secret combination /////////////////// TENGO QUE OCULTARLA CLASS 'HIDdEN'
+
+// secret board - contains the secret combination 
 const createInsightBoard = () => {
     for (let i = 0; i < 4; i++) {
         let insightBubble = document.createElement("div");
@@ -30,6 +34,7 @@ const createInsightBoard = () => {
     }
 }
 createInsightBoard();
+
 // level board - with chosen colors
 const createLevelBoard = () => {
     for (let i = 0; i < selectedColors.length; i++) {
@@ -40,6 +45,7 @@ const createLevelBoard = () => {
     }
 }
 createLevelBoard();
+
 // Create gameboard from chosen level
 const createRows = (numberRows) => {
     for (let i = 0; i < numberRows; i++) {
@@ -67,13 +73,15 @@ const createRows = (numberRows) => {
     }
 }
 createRows (selectedLevel);
+
 // dismiss btn //
 dismissBtn.addEventListener("click", () => {
     clicableArray.forEach((clicable) => {
     clicable.style.backgroundColor = "";
     });
 });
-// check btn //////////////////////////////////////////////////////////////////////
+
+// check btn ////////////////
 // Paint the cells of each row
 let numeroClics = 0;
 let rowContador = 0;
@@ -98,17 +106,20 @@ const captureColors = () => {
     });
     compareArray();
 };
+
 // unblocking rows
 const unblockRows = ()=>{
+
     if (currentArray.every((element) => element !== "")) {
+        console.log ('estpy etrando');
         rowContador++
         console.log (rowContador);
         clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
         snitchesArray = Array.from(document.getElementsByClassName(`snitches-${rowContador-1}`));
         clicableArray.forEach((clicable)=> {
         clicable.addEventListener('click',() => paintBalls(clicable));
-    });
-    }
+        });
+    }  
 }
 let divsForArray = Array.from(divInsightColors.querySelectorAll('.circleColorBoard'));
 const compareArray = () => {
@@ -119,6 +130,7 @@ const compareArray = () => {
 };
 // check function
     const firstMatch = () => {
+        
         let blackWhiteElements = [];
         let newCurrent = currentArray.slice();
         let newCapture = captureRandom.slice();
@@ -144,16 +156,24 @@ const compareArray = () => {
         }
         }
         console.log(blackWhiteElements);
-const snitchesBoard = () => {
-    let colorSnitches = blackWhiteElements.sort();
-    for (let i = 0; i < colorSnitches.length; i++) {
-    let snitches = snitchesArray[i];
-    let colorBn = colorSnitches[i];
-    snitches.style.backgroundColor = colorBn;
+        const snitchesBoard = () => {
+            let colorSnitches = blackWhiteElements.sort();
+            for (let i = 0; i < colorSnitches.length; i++) {
+            let snitches = snitchesArray[i];
+            let colorBn = colorSnitches[i];
+            snitches.style.backgroundColor = colorBn;
+        }
+    };
+
+    snitchesBoard();
+
+    if (blackWhiteElements.length === 4 && blackWhiteElements.every(element => element === "#000000") ){
+        document.getElementById("mastermindHead").style.display = "none";
+        document.getElementById("insightCombo").classList.remove("mm-hidden");
+        // window.location.href = 'game.html';
     }
 };
-snitchesBoard();
-};
+
 firstMatch();
 
 
