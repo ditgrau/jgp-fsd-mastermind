@@ -273,6 +273,12 @@ input[type="color"] {
     margin-bottom: 1.5rem;
 }
 
+.modalFinal {
+    border: solid var(--color-third) 0.05rem;
+    border-radius: 0.5rem;
+    background-color:rgb(26, 26, 26);
+}
+
 /* media */
 
 @media (max-width:1000px) {

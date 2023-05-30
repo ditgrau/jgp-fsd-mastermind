@@ -107,11 +107,20 @@ const captureColors = () => {
     compareArray();
 };
 
+
+
+const openFinal = () => {
+    window.location.href = "final.html";
+    let nameFinal = document.getElementById('userNameFinal');
+    nameFinal.innerHTML = `${sessionStorage.getItem('user')}`;
+}
+
 // unblocking rows
 const unblockRows = ()=>{
 
-    if (currentArray.every((element) => element !== "")) {
+    if (currentArray.every((element) => element !== "") && rowContador < (parseInt(selectedLevel)-1)) {
         console.log ('estpy etrando');
+        console.log ("soy el selected");
         rowContador++
         console.log (rowContador);
         clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
@@ -119,7 +128,13 @@ const unblockRows = ()=>{
         clicableArray.forEach((clicable)=> {
         clicable.addEventListener('click',() => paintBalls(clicable));
         });
-    }  
+    } else {
+            console.log ("aqui");
+            document.getElementById("mastermindHead").style.display = "none";
+            document.getElementById("insightCombo").classList.remove("mm-hidden");
+            setTimeout(openFinal, 2000);;
+    } 
+    console.log (rowContador);
 }
 let divsForArray = Array.from(divInsightColors.querySelectorAll('.circleColorBoard'));
 const compareArray = () => {
@@ -170,12 +185,14 @@ const compareArray = () => {
     if (blackWhiteElements.length === 4 && blackWhiteElements.every(element => element === "#000000") ){
         document.getElementById("mastermindHead").style.display = "none";
         document.getElementById("insightCombo").classList.remove("mm-hidden");
+
+
         // window.location.href = 'game.html';
     }
 };
 
 firstMatch();
-
+console.log (rowContador);
 
 // if (colorSnitches === ["#000000", "#000000", "#000000", "#000000"]) {
 //     window.location.href = "final.html";

@@ -1,7 +1,6 @@
-// Funcion para el logo, no queria meterlo en el html para que no se me moviese el diseño
+
 const game = () => {
 
-// funcion para comprobar que se han rellenado todos los pickers
 let selectedLevel = sessionStorage.getItem('level');
 console.log ('este es el nivel seleccionado' + selectedLevel);
     
