@@ -40,26 +40,26 @@
     <div class="container-fluid m-0 p-0 justify-content-center d-flex">
         <div class="justify-content-center mx-5" id="gameBoard"></div>
         <div class="m-0 p-0" id="levelBoard">
-            <div class="checkButton keypad" id="checkBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            <div class="checkButton keypad" id="checkBtn"
                 onclick="captureColors(), unblockRows(), firstMatch (), snitchesBoard ()">?</div>
             <div class="checkButton keypad mb-4" id="dismissBtn">:</div>
         </div>
     </div>
 
-    <div class="container-fluid pruebaterminal" id="gitConsole">
+    <div class="container-fluid pruebaterminal mm-hidden" id="gitConsole">
         <div class="row justify-content-center">
-            <div class="div col-6 mt-3">
-                <p class="" id="gitText">
+            <div class="div col-8 mt-3">
+                <p class="mm-hidden" id="quotesConsole-0">
                     <span class="userGit" id="userNameGit"></span><span class="userGit">@ESTOP-FL1P4</span> <span
                         class="osGit">ST1TCH</span> <span
                         class="pathGit">~/Docus/laBuena/ahoraSi/estaSi/mastermind</span> <span
                         class="branchGit">(master)</span>
                 </p>
-                <p id="quotesConsole-0">Oooooooohhhhhhhhhhhh!!!!!!!!!!!</p>
-                <p id="quotesConsole-1">Se ha acabado el juego</p>
-                <p id="quotesConsole-2">Y lamentablemente, has perdido</p>
-                <p id="quotesConsole-3">Ahora, puedes hacer dos cosas...</p>
-                <p id="fourth-comment"></p>
+                <p id="quotesConsole-1" class= "m-0 mm-hidden">Oooooooohhhhhhhhhhhh!!!!!!!!!!!</p>
+                <p id="quotesConsole-2" class= "m-0 mm-hidden">Se ha acabado el juego</p>
+                <p id="quotesConsole-3" class= "m-0 mm-hidden">Y lamentablemente, has perdido</p>
+                <p id="quotesConsole-4" class= "m-0 mm-hidden">Ahora, puedes hacer dos cosas...</p>
+                <p id="quotesConsole-5"><span id="fourth-comment"></span></p>
             </div>
         </div>
     </div>

@@ -12,6 +12,7 @@ let checkBtn = document.getElementById('checkBtn');
 
 //variables 
 let secretCombo = [];
+let currentArray = [];
 
 // create secret and random combination
 const colorsRandom = () => {
@@ -85,6 +86,7 @@ let numeroClics = 0;
 let rowContador = 0;
 let clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
 let snitchesArray = Array.from(document.getElementsByClassName(`snitches-${rowContador}`));
+
 const paintBalls = (clicable) => {
     if (numeroClics<selectedColors.length) {
         clicable.style.backgroundColor = selectedColors[numeroClics];
@@ -93,17 +95,16 @@ const paintBalls = (clicable) => {
         numeroClics = 0;
     }
 }
+
 clicableArray.forEach((clicable)=> {
 clicable.addEventListener('click',() => paintBalls(clicable));
 });
-const captureColors = () => {
-    const bolas = Array.from(document.querySelectorAll(`#rowGameboard-${rowContador} .circleColorBoard`));  
-    const someEmpty = bolas.find(bola => bola.style.backgroundColor === undefined);
-    console.log(someEmpty);
 
+
+const captureColors = () => {
     currentArray = clicableArray.map((e) => {
-        let rgbColor = e.style.backgroundColor;
-        return rgbColor;
+    let rgbColor = e.style.backgroundColor;
+    return rgbColor;
     });
     compareArray();
 };
@@ -113,16 +114,19 @@ const captureColors = () => {
 //     window.location.href = "final.html";
 // }
 
+// Consola final del juego
 const printConsole = () =>{
     i= 0;
+    document.getElementById("gitConsole").classList.remove("mm-hidden");
+    const loopConsole = () => {
     if (i<5) {
         document.getElementById(`quotesConsole-${i}`).classList.remove("mm-hidden"); 
         i ++;
+        setTimeout(loopConsole,1000);
     }
+    }
+    loopConsole ();
 }
-printConsole(); 
-
-
 
 
 // unblocking rows
@@ -138,10 +142,14 @@ const unblockRows = ()=>{
     } else {
             document.getElementById("mastermindHead").style.display = "none";
             document.getElementById("insightCombo").classList.remove("mm-hidden");
-            setTimeout(printConsole, 2000);
+            printConsole(); 
     } 
 }
+
+// de hexadecimal a rgb
 let divsForArray = Array.from(divInsightColors.querySelectorAll('.circleColorBoard'));
+let captureRandom = [];
+
 const compareArray = () => {
     captureRandom = divsForArray.map((div) => {
         let rgbRandom = div.style.backgroundColor;
