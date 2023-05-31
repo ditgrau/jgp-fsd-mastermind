@@ -21,6 +21,7 @@ for (let i = 0; i < 4; i++) {
     }
 }
 colorsRandom();
+
 // secret board - contains the secret combination 
 const createInsightBoard = () => {
     for (let i = 0; i < 4; i++) {
@@ -114,15 +115,15 @@ const captureColors = () => {
 
 const printConsole = () =>{
     i= 0;
-    if (condition) {
+    if (i<5) {
         document.getElementById(`quotesConsole-${i}`).classList.remove("mm-hidden"); 
         i ++;
     }
-    for ( i < array.length; i++) {
-        
-    }
 }
-printConsole();
+printConsole(); 
+
+
+
 
 // unblocking rows
 const unblockRows = ()=>{

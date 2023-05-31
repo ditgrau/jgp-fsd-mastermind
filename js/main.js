@@ -92,7 +92,7 @@ let arrayColorsDif = Array.from(document.getElementsByName("pickerDif"));
 
 let emptyBubblesEasy = Array.from( document.getElementsByClassName("circleColorEasy"));
 let emptyBubblesMedium = Array.from( document.getElementsByClassName("circleColorMedium"));
-let emptyBubblesDif = Array.from( document.getElementsByClassName("circleColorDif"));
+let emptyBubblesDif = Array.from(document.getElementsByClassName("circleColorDif"));
 
 let arrayNewColors = [];
 
