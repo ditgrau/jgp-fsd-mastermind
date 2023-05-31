@@ -1,4 +1,3 @@
-
 //session
 let selectedColors = JSON.parse(sessionStorage.getItem('newColors')); 
 let selectedLevel = sessionStorage.getItem('level');
@@ -13,8 +12,9 @@ let checkBtn = document.getElementById('checkBtn');
 //variables 
 let secretCombo = [];
 let currentArray = [];
+let captureRandom = [];
 
-// create secret and random combination
+// creacion de la combinacion secreta
 const colorsRandom = () => {
 for (let i = 0; i < 4; i++) {
     let randomIndex = Math.floor(Math.random() * selectedColors.length);
@@ -22,8 +22,9 @@ for (let i = 0; i < 4; i++) {
     }
 }
 colorsRandom();
+console.log(secretCombo);
 
-// secret board - contains the secret combination 
+// secret board - contiene la combinacion secreta
 const createInsightBoard = () => {
     for (let i = 0; i < 4; i++) {
         let insightBubble = document.createElement("div");
@@ -34,7 +35,7 @@ const createInsightBoard = () => {
 }
 createInsightBoard();
 
-// level board - with chosen colors
+// level board - con los colores elegidos
 const createLevelBoard = () => {
     for (let i = 0; i < selectedColors.length; i++) {
         let clonedSelector = document.createElement("div");
@@ -45,7 +46,7 @@ const createLevelBoard = () => {
 }
 createLevelBoard();
 
-// Create gameboard from chosen level
+// Creacion del tablero a partir del nivel almacenado
 const createRows = (numberRows) => {
     for (let i = 0; i < numberRows; i++) {
         let rowsGameboard = document.createElement("div");
@@ -81,7 +82,7 @@ dismissBtn.addEventListener("click", () => {
 });
 
 // check btn ////////////////
-// Paint the cells of each row
+// Pinta las celdas de cada fila con el click
 let numeroClics = 0;
 let rowContador = 0;
 let clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
@@ -96,11 +97,12 @@ const paintBalls = (clicable) => {
     }
 }
 
+// invoca a la funcion
 clicableArray.forEach((clicable)=> {
 clicable.addEventListener('click',() => paintBalls(clicable));
 });
 
-
+// array para comparaciones
 const captureColors = () => {
     currentArray = clicableArray.map((e) => {
     let rgbColor = e.style.backgroundColor;
@@ -109,28 +111,23 @@ const captureColors = () => {
     compareArray();
 };
 
-// Loser page
-// const openFinal = () => {
-//     window.location.href = "final.html";
-// }
-
-// Consola final del juego
+// Consola final del juego, redireccion para los que pierden
 const printConsole = () =>{
-    i= 0;
+    console.log ("aqui estoy");
+    let i= 0;
     document.getElementById("gitConsole").classList.remove("mm-hidden");
     const loopConsole = () => {
     if (i<8) {
+        console.log ("aqui tmbe");
         document.getElementById(`quotesConsole-${i}`).classList.remove("mm-hidden"); 
         i ++;
         setTimeout(loopConsole,1000);
-    }
+        }
     }
     loopConsole ();
-
 }
 
-
-// unblocking rows
+// desbloquea filas de una en una
 const unblockRows = ()=>{
 
     if (currentArray.every((element) => element !== "") && rowContador < (parseInt(selectedLevel)-1)) {
@@ -149,7 +146,6 @@ const unblockRows = ()=>{
 
 // de hexadecimal a rgb
 let divsForArray = Array.from(divInsightColors.querySelectorAll('.circleColorBoard'));
-let captureRandom = [];
 
 const compareArray = () => {
     captureRandom = divsForArray.map((div) => {
@@ -158,7 +154,7 @@ const compareArray = () => {
     });
 };
 
-// check function
+// funcion de comprobacion - sin fallos en las fichas blancas
     const firstMatch = () => {
         
         let blackWhiteElements = [];
@@ -189,9 +185,9 @@ const compareArray = () => {
             snitches.style.backgroundColor = colorBn;
         }
     };
-
     snitchesBoard();
 
+    // para los ganadores
     if (blackWhiteElements.length === 4 && blackWhiteElements.every(element => element === "#000000") ){
         document.getElementById("mastermindHead").style.display = "none";
         document.getElementById("insightCombo").classList.remove("mm-hidden");

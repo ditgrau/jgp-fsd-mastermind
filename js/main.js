@@ -145,7 +145,8 @@ const mmtypewriter = (comment, time, div)=>{
 
 mmtypewriter("<-- Juego creado por Judit Grau -->", 90, comment1)
 
-// datos jugador
-let nameFinal = document.getElementById('userNameFinal');
-nameFinal.innerHTML = `${sessionStorage.getItem('user')}`;
-console.log(`${sessionStorage.getItem('user')}`);
+// // datos jugador
+// let nameFinal = document.getElementById('userNameFinal');
+// nameFinal.innerHTML = `${sessionStorage.getItem('user')}`;
+// console.log(`${sessionStorage.getItem('user')}`);
+
