@@ -41,6 +41,10 @@ const saveLevel = (levelRows) => {
     sessionStorage.setItem('level', levelRows);
 }
 
+// refrescar el juego sin perder session storage
+const playAgain = () => {
+    window.location.reload();
+}
 // session storage // recoger el nombre usuario
 const saveName = () => {  
     let userPlayer = document.getElementById("userName").value; 

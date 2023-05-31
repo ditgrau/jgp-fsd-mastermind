@@ -119,13 +119,14 @@ const printConsole = () =>{
     i= 0;
     document.getElementById("gitConsole").classList.remove("mm-hidden");
     const loopConsole = () => {
-    if (i<5) {
+    if (i<8) {
         document.getElementById(`quotesConsole-${i}`).classList.remove("mm-hidden"); 
         i ++;
         setTimeout(loopConsole,1000);
     }
     }
     loopConsole ();
+
 }
 
 

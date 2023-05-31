@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="container-fluid pruebaterminal mm-hidden" id="gitConsole">
+    <div class="container-fluid mm-hidden" id="gitConsole">
         <div class="row justify-content-center">
             <div class="div col-8 mt-3">
                 <p class="mm-hidden" id="quotesConsole-0">
@@ -59,7 +59,18 @@
                 <p id="quotesConsole-2" class= "m-0 mm-hidden">Se ha acabado el juego</p>
                 <p id="quotesConsole-3" class= "m-0 mm-hidden">Y lamentablemente, has perdido</p>
                 <p id="quotesConsole-4" class= "m-0 mm-hidden">Ahora, puedes hacer dos cosas...</p>
-                <p id="quotesConsole-5"><span id="fourth-comment"></span></p>
+                <div class="row row-cols-1 row-cols-sm-2 m-0 p-0 mt-3 mb-5 mm-hidden"id="quotesConsole-5">
+                    <div class="col d-flex justify-content-center justify-content-sm-end">
+                        <a class="btn btn-outline-light mm-button p-2 my-2" role="button" onclick="playAgain()">
+                            <span class="yellowtext">.jugar</span><span class="yellow">()</span>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center justify-content-sm-start">
+                        <a class="btn btn-outline-light mm-button p-2 my-2" href="../index.html" role="button">
+                            <span class="yellowtext">.salir</span><span class="yellow">()</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
