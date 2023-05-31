@@ -2,7 +2,6 @@
 //session
 let selectedColors = JSON.parse(sessionStorage.getItem('newColors')); 
 let selectedLevel = sessionStorage.getItem('level');
-console.log ('este es el nivel seleccionado' + selectedLevel);
 
 //dom
 let gameBoard = document.getElementById("gameBoard");
@@ -22,8 +21,6 @@ for (let i = 0; i < 4; i++) {
     }
 }
 colorsRandom();
-console.log (secretCombo);
-
 // secret board - contains the secret combination 
 const createInsightBoard = () => {
     for (let i = 0; i < 4; i++) {
@@ -88,7 +85,6 @@ let rowContador = 0;
 let clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
 let snitchesArray = Array.from(document.getElementsByClassName(`snitches-${rowContador}`));
 const paintBalls = (clicable) => {
-    console.log("clic en el botón");
     if (numeroClics<selectedColors.length) {
         clicable.style.backgroundColor = selectedColors[numeroClics];
         numeroClics ++;
@@ -100,6 +96,10 @@ clicableArray.forEach((clicable)=> {
 clicable.addEventListener('click',() => paintBalls(clicable));
 });
 const captureColors = () => {
+    const bolas = Array.from(document.querySelectorAll(`#rowGameboard-${rowContador} .circleColorBoard`));  
+    const someEmpty = bolas.find(bola => bola.style.backgroundColor === undefined);
+    console.log(someEmpty);
+
     currentArray = clicableArray.map((e) => {
         let rgbColor = e.style.backgroundColor;
         return rgbColor;
@@ -107,34 +107,38 @@ const captureColors = () => {
     compareArray();
 };
 
+// Loser page
+// const openFinal = () => {
+//     window.location.href = "final.html";
+// }
 
-
-const openFinal = () => {
-    window.location.href = "final.html";
-    let nameFinal = document.getElementById('userNameFinal');
-    nameFinal.innerHTML = `${sessionStorage.getItem('user')}`;
+const printConsole = () =>{
+    i= 0;
+    if (condition) {
+        document.getElementById(`quotesConsole-${i}`).classList.remove("mm-hidden"); 
+        i ++;
+    }
+    for ( i < array.length; i++) {
+        
+    }
 }
+printConsole();
 
 // unblocking rows
 const unblockRows = ()=>{
 
     if (currentArray.every((element) => element !== "") && rowContador < (parseInt(selectedLevel)-1)) {
-        console.log ('estpy etrando');
-        console.log ("soy el selected");
         rowContador++
-        console.log (rowContador);
         clicableArray = Array.from(document.getElementsByClassName(`eachRow-${rowContador}`));
         snitchesArray = Array.from(document.getElementsByClassName(`snitches-${rowContador-1}`));
         clicableArray.forEach((clicable)=> {
         clicable.addEventListener('click',() => paintBalls(clicable));
         });
     } else {
-            console.log ("aqui");
             document.getElementById("mastermindHead").style.display = "none";
             document.getElementById("insightCombo").classList.remove("mm-hidden");
-            setTimeout(openFinal, 2000);;
+            setTimeout(printConsole, 2000);
     } 
-    console.log (rowContador);
 }
 let divsForArray = Array.from(divInsightColors.querySelectorAll('.circleColorBoard'));
 const compareArray = () => {
@@ -143,6 +147,7 @@ const compareArray = () => {
         return rgbRandom;
     });
 };
+
 // check function
     const firstMatch = () => {
         
@@ -154,8 +159,6 @@ const compareArray = () => {
             newCurrent[i] = null;
             newCapture[i] = null;
             blackWhiteElements.push("#000000");
-            console.log(newCurrent);
-            console.log(newCapture);
             }
         }
         for (let j = 0; j < 4; j++) {
@@ -166,11 +169,8 @@ const compareArray = () => {
             }
             blackWhiteElements.push('#FFFFFF');
             newCurrent[j] = null;
-            console.log(newCurrent);
-            console.log(newCapture);
         }
         }
-        console.log(blackWhiteElements);
         const snitchesBoard = () => {
             let colorSnitches = blackWhiteElements.sort();
             for (let i = 0; i < colorSnitches.length; i++) {
@@ -185,24 +185,11 @@ const compareArray = () => {
     if (blackWhiteElements.length === 4 && blackWhiteElements.every(element => element === "#000000") ){
         document.getElementById("mastermindHead").style.display = "none";
         document.getElementById("insightCombo").classList.remove("mm-hidden");
-
-
         // window.location.href = 'game.html';
     }
 };
 
 firstMatch();
-console.log (rowContador);
 
-// if (colorSnitches === ["#000000", "#000000", "#000000", "#000000"]) {
-//     window.location.href = "final.html";
-// }
 
-// const shownRandomFinal = () => {
-//     document.getElementById("mastermindHead").style.display = "none";
-//     document.getElementById("insightCombo").classList.remove("mm-hidden");
-// }
 
-// let moveStorage () => {
-    
-// }

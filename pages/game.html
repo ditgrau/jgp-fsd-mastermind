@@ -27,6 +27,7 @@
             </a>
         </div>
     </nav>
+    <!-- mastermind - logo -->
     <div class="row container-fluid p-0 m-0 pt-4 mt-5">
         <p class="text-center mastermindHead h4 m-0" id="mastermindHead"><span class="blue">~master</span><span
                 class="keywords">(</span><span class="string">"mind"</span><span class="keywords">)</span>;
@@ -35,18 +36,35 @@
             <div class="row flex-row mm-hidden" id="insightCombo"></div>
         </div>
     </div>
+    <!-- genera tablero -->
     <div class="container-fluid m-0 p-0 justify-content-center d-flex">
         <div class="justify-content-center mx-5" id="gameBoard"></div>
         <div class="m-0 p-0" id="levelBoard">
-        
-        <div class="checkButton keypad" id="checkBtn" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="captureColors(), unblockRows(), firstMatch (), snitchesBoard ()" >?</div>
+            <div class="checkButton keypad" id="checkBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                onclick="captureColors(), unblockRows(), firstMatch (), snitchesBoard ()">?</div>
             <div class="checkButton keypad mb-4" id="dismissBtn">:</div>
         </div>
     </div>
-    <!-- modal -->
-    <div id="modal">
-    
-</div>
+
+    <div class="container-fluid pruebaterminal" id="gitConsole">
+        <div class="row justify-content-center">
+            <div class="div col-6 mt-3">
+                <p class="" id="gitText">
+                    <span class="userGit" id="userNameGit"></span><span class="userGit">@ESTOP-FL1P4</span> <span
+                        class="osGit">ST1TCH</span> <span
+                        class="pathGit">~/Docus/laBuena/ahoraSi/estaSi/mastermind</span> <span
+                        class="branchGit">(master)</span>
+                </p>
+                <p id="quotesConsole-0">Oooooooohhhhhhhhhhhh!!!!!!!!!!!</p>
+                <p id="quotesConsole-1">Se ha acabado el juego</p>
+                <p id="quotesConsole-2">Y lamentablemente, has perdido</p>
+                <p id="quotesConsole-3">Ahora, puedes hacer dos cosas...</p>
+                <p id="fourth-comment"></p>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

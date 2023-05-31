@@ -1,4 +1,3 @@
-
 const game = () => {
 
 let selectedLevel = sessionStorage.getItem('level');
@@ -20,6 +19,7 @@ console.log ('este es el nivel seleccionado' + selectedLevel);
     }
 };
 
+// funcion para comprobar que todos los color picker se han rellenado
 const checkForGame = (data) => {
     let saveArray = JSON.parse(sessionStorage.getItem('newColors')); 
     if (saveArray && saveArray.length === data) {
@@ -107,10 +107,9 @@ for (let i = 0; i < arrayLevel.length; i++) {
     sessionStorage.setItem('newColors', newColors);
     }); 
 }
-
 return arrayNewColors;
 }
-    
+
 loopGetColors(arrayColorsEasy, emptyBubblesEasy);
 loopGetColors(arrayColorsMedium, emptyBubblesMedium);
 loopGetColors(arrayColorsDif, emptyBubblesDif);
@@ -118,6 +117,7 @@ loopGetColors(arrayColorsDif, emptyBubblesDif);
 
 // efecto maquina de escribir
 
+    // declaracion de variables
 const comment1 = document.getElementById("first-comment");
 const comment2 = document.getElementById("second-comment");
 const comment3 = document.getElementById("third-comment");
@@ -125,8 +125,7 @@ const comment4 = document.getElementById("fourth-comment");
 const comment5 = document.getElementById("fifth-comment");
 const comment6 = document.getElementById("sixth-comment");
 
-
-
+    // funcion
 const mmtypewriter = (comment, time, div)=>{
     let arrayComent = comment.split("");
     div.innerHTML = "";
@@ -141,3 +140,8 @@ const mmtypewriter = (comment, time, div)=>{
 }
 
 mmtypewriter("<-- Juego creado por Judit Grau -->", 90, comment1)
+
+// datos jugador
+let nameFinal = document.getElementById('userNameFinal');
+nameFinal.innerHTML = `${sessionStorage.getItem('user')}`;
+console.log(`${sessionStorage.getItem('user')}`);

@@ -262,10 +262,6 @@ input[type="color"] {
     cursor: pointer;
 }
 
-#gitConsole {
-    transform: translate(50%, 50%);
-}
-
 #insightCombo {
     border: solid rgb(94, 94, 94) 0.1rem;
     border-radius: 0.5rem;
@@ -273,10 +269,15 @@ input[type="color"] {
     margin-bottom: 1.5rem;
 }
 
-.modalFinal {
-    border: solid var(--color-third) 0.05rem;
-    border-radius: 0.5rem;
-    background-color:rgb(26, 26, 26);
+#gitConsole {
+    height: 25rem;
+    display: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #11b97b;
+    transform: translate(0rem, -15rem);
+
 }
 
 /* media */
