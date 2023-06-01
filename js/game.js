@@ -14,6 +14,11 @@ let secretCombo = [];
 let currentArray = [];
 let captureRandom = [];
 
+
+goWinner = () => {
+    window.location.href = 'final.html';
+}
+
 // creacion de la combinacion secreta
 const colorsRandom = () => {
 for (let i = 0; i < 4; i++) {
@@ -186,12 +191,12 @@ const compareArray = () => {
         }
     };
     snitchesBoard();
-
-    // para los ganadores
+    
+// para los ganadores
     if (blackWhiteElements.length === 4 && blackWhiteElements.every(element => element === "#000000") ){
         document.getElementById("mastermindHead").style.display = "none";
         document.getElementById("insightCombo").classList.remove("mm-hidden");
-        // window.location.href = 'game.html';
+        setTimeout(goWinner(),1500);
     }
 };
 
